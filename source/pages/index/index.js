@@ -24,43 +24,80 @@ alert( user.friends[1] ); // 1
 
 */
 
-var loadURL = function(url) {
-    var oRequest = new XMLHttpRequest();
-    oRequest.open('GET', url, false);
-    oRequest.setRequestHeader("User-Agent", navigator.userAgent);
-    oRequest.send(null);
+const pickRandWord = function(el) {
+	let max = el.length,
+		min = 0,
+		index = Math.floor(Math.random() * (max - min) + min);
 
-    return oRequest.responseText;
+    return el[index];
+};
+
+const readAndWriteJSON = function(textEl, currentQuestion) {
+	textEl.innerHTML = currentQuestion;
 };
 
 
-window.onload = function () {
-	var jsonLine = `{
-		"elements": [
-			{
-				"question": "Hello",
-				"answer": " ",
-				"picture": "picture.jpg"
-			},
-			{
-				"question": " ",
-				"answer": " ",
-				"picture": "picture.jpg"
-			},
-			{
-				"question": " ",
-				"answer": " ",
-				"picture": "picture.jpg"
-			},
-			{
-				"question": " ",
-				"answer": " ",
-				"picture": "picture.jpg"
-			}
-		]
-	}`;
-	var wordsAndPhrases = JSON.parse(jsonLine);
 
-	console.log(wordsAndPhrases["elements"][0]["question"]);
+
+
+
+window.onload = function () {
+	const resetDate = function () {
+		currentEl = pickRandWord (wordsAndPhrases);
+		currentQuestion = currentEl['question'];
+		currentAnswer = currentEl['answer'];
+	};
+
+	const readFromJSON = function() {
+		var currentEl = pickRandWord (wordsAndPhrases),
+		currentQuestion = currentEl['question'],
+		currentAnswer = currentEl['answer'];
+	};
+
+	let jsonLine = `[
+		{
+			"question": "Вопрос1",
+			"answer": "Ответ1",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Вопрос2",
+			"answer": "Ответ2",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Вопрос3",
+			"answer": "Ответ3",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Вопрос4",
+			"answer": "Ответ4",
+			"picture": "picture.jpg"
+		}
+	]`;
+
+	var wordsAndPhrases = JSON.parse(jsonLine),
+		textEl = document.querySelector('.text_question'),
+		buttonEl = document.querySelector('.submit_data'),
+		inputEl = document.querySelector('.input_answer'),
+		currentEl = pickRandWord (wordsAndPhrases),
+		currentQuestion = currentEl['question'],
+		currentAnswer = currentEl['answer'];
+
+		//readFromJSON (wordsAndPhrases);
+
+		readAndWriteJSON (textEl, currentQuestion);
+
+	buttonEl.addEventListener('click', function() {
+		if (inputEl.value == currentAnswer) {
+			console.log ('Success');
+		} else {
+			console.log ('Unsuccess');
+		}
+		//readFromJSON (wordsAndPhrases);
+		resetDate();
+		readAndWriteJSON (textEl, currentQuestion);
+	});
 
 };
