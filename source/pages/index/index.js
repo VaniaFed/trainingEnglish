@@ -32,26 +32,17 @@ const pickRandWord = function(el) {
     return el[index];
 };
 
-const readAndWriteJSON = function(textEl, currentQuestion) {
-	textEl.innerHTML = currentQuestion;
-};
-
-
-
-
 
 
 window.onload = function () {
-	const resetDate = function () {
+	const nextWord = function () {
 		currentEl = pickRandWord (wordsAndPhrases);
 		currentQuestion = currentEl['question'];
 		currentAnswer = currentEl['answer'];
 	};
 
-	const readFromJSON = function() {
-		var currentEl = pickRandWord (wordsAndPhrases),
-		currentQuestion = currentEl['question'],
-		currentAnswer = currentEl['answer'];
+	const clearVal = function() {
+		inputEl.value = "";
 	};
 
 	let jsonLine = `[
@@ -774,15 +765,13 @@ window.onload = function () {
 
 	var wordsAndPhrases = JSON.parse(jsonLine),
 		textEl = document.querySelector('.text_question'),
-		buttonEl = document.querySelector('.submit_data'),
+		buttonEl = document.querySelector('.btn_check_word'),
 		inputEl = document.querySelector('.input_answer'),
 		currentEl = pickRandWord (wordsAndPhrases),
 		currentQuestion = currentEl['question'],
 		currentAnswer = currentEl['answer'];
 
-		//readFromJSON (wordsAndPhrases);
-
-		readAndWriteJSON (textEl, currentQuestion);
+		textEl.innerHTML = currentQuestion;
 
 	buttonEl.addEventListener('click', function() {
 		if (inputEl.value == currentAnswer) {
@@ -790,9 +779,10 @@ window.onload = function () {
 		} else {
 			console.log ('Unsuccess');
 		}
-		//readFromJSON (wordsAndPhrases);
-		resetDate();
-		readAndWriteJSON (textEl, currentQuestion);
+
+		nextWord ();
+		clearVal ();
+		textEl.innerHTML = currentQuestion;
 	});
 
 };
