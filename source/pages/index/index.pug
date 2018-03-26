@@ -3,6 +3,7 @@ html
 	head
 		meta(charset = 'utf-8')
 		link(href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500,700,900" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet")
 		meta(name='viewport', content="initial-scale=1.0, width=device-width")
 		title Training English
 		
@@ -14,4 +15,10 @@ html
 						.text_question Some text...
 						input.input_answer(placeholder="Your answer:")
 						button.btn_check_word Check my answer
-	  
+						.info_container
+							.info_inner
+								.plus 
+								.text#plus_text 0
+							.info_inner
+								.minus 
+								.text#minus_text 0

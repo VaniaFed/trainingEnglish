@@ -6,7 +6,7 @@ import "./index.scss";
 /*
 JSON.parse – читает объекты из строки в формате JSON.
 
-var numbers = "[0, 1, 2, 3]";
+let numbers = "[0, 1, 2, 3]";
 
 numbers = JSON.parse(numbers);
 
@@ -15,7 +15,7 @@ alert( numbers[1] ); // 1
 Or so:
 
 
-var user = '{ "name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+let user = '{ "name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
 
 user = JSON.parse(user);
 
@@ -32,6 +32,15 @@ const pickRandWord = function(el) {
     return el[index];
 };
 
+const counterSuccess = function(num) {
+	let count = num || 0;
+	return function() {
+		return count++;
+	}
+}
+
+const counterError = counterSuccess;
+
 
 
 window.onload = function () {
@@ -43,6 +52,16 @@ window.onload = function () {
 
 	const clearVal = function() {
 		inputEl.value = "";
+	};
+
+	const checkAnswer = function() {
+		if (inputEl.value == currentAnswer) {
+			plusText.innerHTML = countSuccess();
+			inputEl.focus();
+		} else {
+			minusText.innerHTML = countError();
+			inputEl.focus();
+		}
 	};
 
 	let jsonLine = `[
@@ -758,31 +777,41 @@ window.onload = function () {
 		},
 		{
 			"question": "Трудно",
-			"answer": "difficult",
+			"answer": "Difficult",
 			"picture": "picture.jpg"
 		}
 	]`;
 
-	var wordsAndPhrases = JSON.parse(jsonLine),
+	let wordsAndPhrases = JSON.parse(jsonLine),
 		textEl = document.querySelector('.text_question'),
 		buttonEl = document.querySelector('.btn_check_word'),
 		inputEl = document.querySelector('.input_answer'),
 		currentEl = pickRandWord (wordsAndPhrases),
 		currentQuestion = currentEl['question'],
-		currentAnswer = currentEl['answer'];
+		currentAnswer = currentEl['answer'],
+		plusText = document.querySelector('#plus_text'),
+		minusText = document.querySelector('#minus_text');
 
-		textEl.innerHTML = currentQuestion;
+	textEl.innerHTML = currentQuestion;
+	inputEl.focus();
 
+	let countSuccess = counterSuccess(1);
+	let countError = counterError(1);
 	buttonEl.addEventListener('click', function() {
-		if (inputEl.value == currentAnswer) {
-			console.log ('Success');
-		} else {
-			console.log ('Unsuccess');
-		}
-
+		checkAnswer ();
 		nextWord ();
 		clearVal ();
+
 		textEl.innerHTML = currentQuestion;
 	});
 
+	window.addEventListener('keypress', function(e) {
+		if (e.code == 'Enter') {
+			checkAnswer ();
+			nextWord ();
+			clearVal ();
+
+			textEl.innerHTML = currentQuestion;
+		}
+	});
 };

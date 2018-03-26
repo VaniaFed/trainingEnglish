@@ -30,7 +30,7 @@ html, body {
 	padding: 0;
 }
 body {
-	font: 16px/1.5 'roboto', 'arial', 'sans-serif';
+	font: 16px/1.5 'IBM Plex Sans', 'arial', 'sans-serif';
 	background: #582a72; /* Old browsers */
 	background: -moz-linear-gradient(45deg, #0D4D4D 50%, #003333 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(45deg, #0D4D4D 50%,#003333 100%); /* Chrome10-25,Safari5.1-6 */
@@ -98,14 +98,51 @@ body {
 	background: none;
 	color: #fff;
 	font-size: 22px;
-	font-weight: 400;
+	font-weight: bold;
 	border: 3px solid #fff;
 	outline: none;
 	transition: color .3s, background .3s;
 	cursor: pointer;
+	letter-spacing: 1px;
 }
 
 .btn_check_word:hover {
 	background: #fff;
 	color: #003333;
 }
+
+.info_container {
+	position: absolute;
+	top: 20px;
+	left: 40px;
+}
+
+.info_inner {
+	color: #fff;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+
+	.plus, .minus {
+		background: transparent no-repeat;
+		background-size: cover;
+		width: 42px;
+		height: 42px;
+	}
+
+	.plus {
+		background-image: url('img/plus.png');
+	}
+
+	.minus {
+		background-image: url('img/error.png');
+	}
+
+	.text {
+		margin-left: 16px;
+		font-size: 32px;
+		font-weight: 300;
+	}
+}
+
