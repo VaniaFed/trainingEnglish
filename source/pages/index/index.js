@@ -1,6 +1,7 @@
 
 import "./normalize.css";
 import "./index.scss";
+import "./listData.json";
 'use strict';
 
 /*
@@ -55,64 +56,64 @@ window.onload = function () {
 	};
 
 	const checkAnswer = function() {
-		if (inputEl.value == currentAnswer) {
-			plusText.innerHTML = countSuccess();
-			inputEl.focus();
-		} else {
-			minusText.innerHTML = countError();
-			inputEl.focus();
+		console.log(currentAnswer.toLowerCase());
+		console.log(inputEl.value.toLowerCase());
+		console.log(inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1);
+		if (inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1) {
+			return true;
 		}
+		return false;
 	};
 
 	let jsonLine = `[
 		{
 			"question": "Что ты хочешь сказать?",
-			"answer": "What do you want to say?",
+			"answer": "What do you want to say",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Что выглядит странным?",
-			"answer": "What looks strange?",
+			"answer": "What looks strange",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Кого ты знаешь?",
-			"answer": "Who do you know?",
+			"answer": "Who do you know",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Кто знает это?",
-			"answer": "Who know it?",
+			"answer": "Who know it",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Кого ты знаешь?",
-			"answer": "Who do you know?",
+			"answer": "Who do you know",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Какого рода книги ты читаешь?",
-			"answer": "What kind of books do you read?",
+			"answer": "What kind of books do you read",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "В какое время ты встаешь?",
-			"answer": "What time do you got up?",
+			"answer": "What time do you got up",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Сколько денег у тебя с собой?",
-			"answer": "How much money do you have with you?",
+			"answer": "How much money do you have with you",
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Мне тоже нравится это",
-			"answer": "I like",
+			"question": "Мне нравится это",
+			"answer": "I like it",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "Кого ты знаешь?",
-			"answer": "Who do you know?",
+			"answer": "Who do you know",
 			"picture": "picture.jpg"
 		},
 		{
@@ -142,7 +143,7 @@ window.onload = function () {
 		},
 		{
 			"question": "Я хочу жить за границей",
-			"answer": "I want to go abroad",
+			"answer": "I want to live abroad",
 			"picture": "picture.jpg"
 		},
 		{
@@ -177,7 +178,7 @@ window.onload = function () {
 		},
 		{
 			"question": "Они дома",
-			"answer": "They are at school",
+			"answer": "They are at home",
 			"picture": "picture.jpg"
 		},
 		{
@@ -216,8 +217,8 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Отдыхать",
-			"answer": "Have a rest",
+			"question": "Отдыхать на выходных",
+			"answer": "Rest on weekends",
 			"picture": "picture.jpg"
 		},
 		{
@@ -287,12 +288,12 @@ window.onload = function () {
 		},
 		{
 			"question": "Какого рода?",
-			"answer": "What kind of?",
+			"answer": "What kind of",
 			"picture": "picture.jpg"
 		},
 		{
 			"question": "В какое время?",
-			"answer": "What time?",
+			"answer": "What time",
 			"picture": "picture.jpg"
 		},
 		{
@@ -302,7 +303,7 @@ window.onload = function () {
 		},
 		{
 			"question": "Сколько времени у тебя занимает добраться до работы?",
-			"answer": "How long time it take you to get to work?",
+			"answer": "How long time does it take you to get to work",
 			"picture": "picture.jpg"
 		},
 		{
@@ -366,8 +367,8 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Вдохновение",
-			"answer": "Inspiration",
+			"question": "Вдохновение писать код",
+			"answer": "Inspiration to write code",
 			"picture": "picture.jpg"
 		},
 		{
@@ -631,8 +632,8 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Пугать",
-			"answer": "Frighten",
+			"question": "Пугать маленьких детей",
+			"answer": "Frighten little children",
 			"picture": "picture.jpg"
 		},
 		{
@@ -691,8 +692,8 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Дышать",
-			"answer": "Breathe",
+			"question": "Дышать вместе с тобой",
+			"answer": "Breathe with you",
 			"picture": "picture.jpg"
 		},
 		{
@@ -731,13 +732,13 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Жаловаться",
-			"answer": "Complain",
+			"question": "Жаловаться на плохую жизнь",
+			"answer": "Complain about a bad life",
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Отказываться",
-			"answer": "Refuse",
+			"question": "Отказываться от лишних денег",
+			"answer": "Refuse extra money",
 			"picture": "picture.jpg"
 		},
 		{
@@ -779,18 +780,51 @@ window.onload = function () {
 			"question": "Трудно",
 			"answer": "Difficult",
 			"picture": "picture.jpg"
+		},
+		{
+			"question": "Что твой босс обычно обещает?",
+			"answer": "What does your boss usually promise",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я наслаждаюсь изучением Английского языка",
+			"answer": "I enjoy learn English",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Сколько по времени занимает у его дочери добраться в школу?",
+			"answer": "How long does it take his daughter to get to school",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Почему твоя мама думает так?",
+			"answer": "Why does your mother think so",
+			"picture": "picture.jpg"
 		}
 	]`;
 
-	let wordsAndPhrases = JSON.parse(jsonLine),
-		textEl = document.querySelector('.text_question'),
-		buttonEl = document.querySelector('.btn_check_word'),
-		inputEl = document.querySelector('.input_answer'),
-		currentEl = pickRandWord (wordsAndPhrases),
-		currentQuestion = currentEl['question'],
-		currentAnswer = currentEl['answer'],
-		plusText = document.querySelector('#plus_text'),
-		minusText = document.querySelector('#minus_text');
+	let 
+		xhr 				= 	new XMLHttpRequest(),
+		wordsAndPhrases 	=	JSON.parse(jsonLine),
+		textEl 				=	document.querySelector('.text_question'),
+		buttonEl 			=	document.querySelector('.btn_check_word'),
+		inputEl 			=	document.querySelector('.input_answer'),
+		currentEl 			=	pickRandWord (wordsAndPhrases),
+		currentQuestion 	=	currentEl['question'],
+		currentAnswer 		=	currentEl['answer'],
+		plusText 			=	document.querySelector('#plus_text'),
+		minusText 			=	document.querySelector('#minus_text');
+
+	xhr.open('GET', 'listData.json', false);
+	xhr.send();
+
+	if (xhr.status != 200) {
+	  // обработать ошибку
+	  console.log( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+	} else {
+	  // вывести результат
+	  console.log( xhr.responseText ); // responseText -- текст ответа.
+	}
 
 	textEl.innerHTML = currentQuestion;
 	inputEl.focus();
@@ -798,7 +832,14 @@ window.onload = function () {
 	let countSuccess = counterSuccess(1);
 	let countError = counterError(1);
 	buttonEl.addEventListener('click', function() {
-		checkAnswer ();
+		if (checkAnswer ()) {
+			plusText.innerHTML = countSuccess();
+			inputEl.focus();
+		} else {
+			minusText.innerHTML = countError();
+			inputEl.focus();
+		}
+
 		nextWord ();
 		clearVal ();
 
@@ -806,8 +847,14 @@ window.onload = function () {
 	});
 
 	window.addEventListener('keypress', function(e) {
+		inputEl.focus();
 		if (e.code == 'Enter') {
-			checkAnswer ();
+			if (checkAnswer ()) {
+				plusText.innerHTML = countSuccess();
+			} else {
+				minusText.innerHTML = countError();
+			}
+
 			nextWord ();
 			clearVal ();
 

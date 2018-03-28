@@ -10,6 +10,7 @@ const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const canvas = require('./webpack/canvas');
+const json = require('./webpack/json');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
@@ -41,7 +42,8 @@ const common = merge([
         ],
     },
     pug(),
-    images()
+    images(),
+
 ]);
 
 module.exports = function(env) {
@@ -50,7 +52,8 @@ module.exports = function(env) {
             common,
             canvas,
             extractCSS(),
-            uglifyJS()
+            json()
+            //uglifyJS()
         ]);
     }
     if (env === 'development'){
