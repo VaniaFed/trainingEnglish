@@ -93,10 +93,13 @@ body {
 	&:focus {
 		outline: 3px solid rgba(#0396FF, .8);
 	}
+	&-error {
+		outline: 3px solid rgba(red, .8);
+		&:focus {
+			outline: 3px solid rgba(red, .8);
+		}
+	}
 }
-
-
-
 
 .btn_check_word {
 	padding: 15px 18px;
@@ -153,3 +156,14 @@ body {
 	}
 }
 
+.btn__show_select_line {
+	font-size: 20px;
+	display: inline-block;
+	position: absolute;
+	right: 40px;
+	top: 40px;
+	transition: transform .4s;
+	&:hover {
+		transform: rotate(45deg);
+	}
+}

@@ -513,6 +513,10 @@ body {
   box-shadow: 2px 4px 16px 0 rgba(45, 45, 45, 0.1); }
   .input_answer:focus {
     outline: 3px solid rgba(3, 150, 255, 0.8); }
+  .input_answer-error {
+    outline: 3px solid rgba(255, 0, 0, 0.8); }
+    .input_answer-error:focus {
+      outline: 3px solid rgba(255, 0, 0, 0.8); }
 
 .btn_check_word {
   padding: 15px 18px;
@@ -556,3 +560,13 @@ body {
     font-size: 32px;
     font-weight: 300;
     color: #333; }
+
+.btn__show_select_line {
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  transition: transform .4s; }
+  .btn__show_select_line:hover {
+    transform: rotate(45deg); }

@@ -42,8 +42,6 @@ const counterSuccess = function(num) {
 
 const counterError = counterSuccess;
 
-
-
 window.onload = function () {
 	const nextWord = function () {
 		currentEl = pickRandWord (wordsAndPhrases);
@@ -51,21 +49,33 @@ window.onload = function () {
 		currentAnswer = currentEl['answer'];
 	};
 
-	const clearVal = function() {
+	const clearInputVal = function() {
 		inputEl.value = "";
 	};
 
 	const checkAnswer = function() {
-		console.log(currentAnswer.toLowerCase());
-		console.log(inputEl.value.toLowerCase());
-		console.log(inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1);
-		if (inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1) {
-			return true;
-		}
-		return false;
+		return (inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1)
 	};
 
-	let jsonLine = `[
+	const processRequest = function() {
+		if (checkAnswer ()) {
+			if (inputEl.classList.contains('input_answer-error')) {
+				inputEl.classList.remove('input_answer-error');
+			} else {
+				plusText.innerHTML = countSuccess();
+			}
+			nextWord ();
+			clearInputVal ();
+
+			textEl.innerHTML = currentQuestion;
+		} else {
+			minusText.innerHTML = countError();
+			inputEl.classList.add('input_answer-error');
+			inputEl.value = currentAnswer;
+		}
+	}
+
+	let basicLineJSON = `[
 		{
 			"question": "Что ты хочешь сказать?",
 			"answer": "What do you want to say",
@@ -227,11 +237,6 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Свободное время",
-			"answer": "Free time",
-			"picture": "picture.jpg"
-		},
-		{
 			"question": "Слушать музыку",
 			"answer": "Listen to music",
 			"picture": "picture.jpg"
@@ -334,11 +339,6 @@ window.onload = function () {
 		{
 			"question": "В браке",
 			"answer": "Married",
-			"picture": "picture.jpg"
-		},
-		{
-			"question": "Деревня",
-			"answer": "Village",
 			"picture": "picture.jpg"
 		},
 		{
@@ -527,11 +527,6 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Партнер",
-			"answer": "Partner",
-			"picture": "picture.jpg"
-		},
-		{
 			"question": "Счастье",
 			"answer": "Happiness",
 			"picture": "picture.jpg"
@@ -572,11 +567,6 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Мотивировать",
-			"answer": "Motivate",
-			"picture": "picture.jpg"
-		},
-		{
 			"question": "Объяснять",
 			"answer": "Explain",
 			"picture": "picture.jpg"
@@ -613,7 +603,7 @@ window.onload = function () {
 		},
 		{
 			"question": "Достаточно",
-			"answer": "Enaugh",
+			"answer": "Enough",
 			"picture": "picture.jpg"
 		},
 		{
@@ -742,11 +732,6 @@ window.onload = function () {
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Добавить",
-			"answer": "Add",
-			"picture": "picture.jpg"
-		},
-		{
 			"question": "Беспокоить",
 			"answer": "Worry",
 			"picture": "picture.jpg"
@@ -800,12 +785,54 @@ window.onload = function () {
 			"question": "Почему твоя мама думает так?",
 			"answer": "Why does your mother think so",
 			"picture": "picture.jpg"
+		},
+		{
+			"question": "Мы не разделяем твою точку зрения",
+			"answer": "We don't share your point of view",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Мы хотим намного больше практики",
+			"answer": "We want much more practice",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Этот человек вдохновляет меня",
+			"answer": "This person inspire me",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Этот человек вдохновляет меня",
+			"answer": "This person inspire me",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я изучаю Английский с большим удовольствием",
+			"answer": "I learn English with great pleasure",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я пишу код с большим удовольствием",
+			"answer": "I write code with great pleasure",
+			"picture": "picture.jpg"
+		}
+	]`;
+
+	let questionsLineJSON = `[
+		{
+			"question": "Что ты хочешь сказать?",
+			"answer": "What do you want to say",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Что ты хочешь сказать?",
+			"answer": "What do you want to say",
+			"picture": "picture.jpg"
 		}
 	]`;
 
 	let 
-		xhr 				= 	new XMLHttpRequest(),
-		wordsAndPhrases 	=	JSON.parse(jsonLine),
+		wordsAndPhrases 	=	JSON.parse(basicLineJSON),
 		textEl 				=	document.querySelector('.text_question'),
 		buttonEl 			=	document.querySelector('.btn_check_word'),
 		inputEl 			=	document.querySelector('.input_answer'),
@@ -815,50 +842,20 @@ window.onload = function () {
 		plusText 			=	document.querySelector('#plus_text'),
 		minusText 			=	document.querySelector('#minus_text');
 
-	xhr.open('GET', 'listData.json', false);
-	xhr.send();
-
-	if (xhr.status != 200) {
-	  // обработать ошибку
-	  console.log( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-	} else {
-	  // вывести результат
-	  console.log( xhr.responseText ); // responseText -- текст ответа.
-	}
-
 	textEl.innerHTML = currentQuestion;
 	inputEl.focus();
 
 	let countSuccess = counterSuccess(1);
 	let countError = counterError(1);
 	buttonEl.addEventListener('click', function() {
-		if (checkAnswer ()) {
-			plusText.innerHTML = countSuccess();
-			inputEl.focus();
-		} else {
-			minusText.innerHTML = countError();
-			inputEl.focus();
-		}
-
-		nextWord ();
-		clearVal ();
-
-		textEl.innerHTML = currentQuestion;
+		processRequest ();
+		inputEl.focus();
 	});
 
 	window.addEventListener('keypress', function(e) {
 		inputEl.focus();
-		if (e.code == 'Enter') {
-			if (checkAnswer ()) {
-				plusText.innerHTML = countSuccess();
-			} else {
-				minusText.innerHTML = countError();
-			}
-
-			nextWord ();
-			clearVal ();
-
-			textEl.innerHTML = currentQuestion;
+		if (e.code === 'Enter') {
+			processRequest ();
 		}
 	});
 };

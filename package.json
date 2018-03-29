@@ -11,9 +11,6 @@
     "test": "mocha-webpack --webpack-config webpack/webpack.config.test.js --watch \"spec/**/*.spec.js\" || true"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
