@@ -425,10 +425,56 @@ template {
 [hidden] {
   display: none;
 }
+@keyframes show_select_line {
+  0% {
+    right: -45px;
+    transform: rotate(180deg); }
+  100% {
+    right: 40px;
+    transform: rotate(0deg); } }
+
+@keyframes infoPlusMinus {
+  0% {
+    transform: translateX(-200px) rotate(0deg); }
+  100% {
+    transform: rotate(180deg); } }
+
+@keyframes opacityOn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes show_elements_fromAbove {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+
+@keyframes whenError {
+  0% {
+    transform: rotate(0deg); }
+  20% {
+    transform: rotate(-10deg); }
+  70% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(-10deg); } }
+
+@keyframes show_elements_fromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+
 * {
   box-sizing: border-box; }
 
-h1, h2, h3, h4, p, a, input {
+h1, h2, h3, h4, p, a, input, ul, li {
   margin: 0;
   padding: 0;
   font-family: 'roboto'; }
@@ -444,6 +490,9 @@ input {
   content: '';
   display: block;
   clear: both; }
+
+.hide {
+  display: none; }
 
 html, body {
   height: 100%;
@@ -469,7 +518,7 @@ body {
   width: 100%;
   margin: auto; }
 
-.inner_container {
+.inner_container, .select_level__container {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -479,13 +528,13 @@ body {
   white-space: nowrap;
   text-align: center;
   font-size: 0; }
-  .inner_container:before {
+  .inner_container:before, .select_level__container:before {
     height: 100%;
     display: inline-block;
     vertical-align: middle;
     content: ''; }
 
-.inner_main {
+.inner_main, .container__inner__select_level__container {
   display: inline-block;
   white-space: normal;
   vertical-align: middle;
@@ -494,6 +543,9 @@ body {
   text-align: center; }
 
 .text_question {
+  transform: translateY(-30px);
+  animation: show_elements_fromAbove 1s .4s forwards;
+  opacity: 0;
   color: #333;
   font-size: 32px;
   text-align: center;
@@ -501,6 +553,8 @@ body {
   font-weight: 200; }
 
 .input_answer {
+  animation: opacityOn 1s 1s forwards;
+  opacity: 0;
   padding: 12px 20px;
   font-size: 18px;
   max-width: 550px;
@@ -514,11 +568,14 @@ body {
   .input_answer:focus {
     outline: 3px solid rgba(3, 150, 255, 0.8); }
   .input_answer-error {
+    animation: whenError .3s backwards, opacityOn 1s 1s both;
     outline: 3px solid rgba(255, 0, 0, 0.8); }
     .input_answer-error:focus {
       outline: 3px solid rgba(255, 0, 0, 0.8); }
 
 .btn_check_word {
+  animation: show_elements_fromBottom 0.6s 1.2s forwards;
+  opacity: 0;
   padding: 15px 18px;
   display: block;
   margin: 0 auto;
@@ -547,26 +604,55 @@ body {
   align-items: center;
   margin: 20px 0; }
   .info_inner .plus, .info_inner .minus {
-    background: transparent no-repeat;
-    background-size: cover;
     width: 42px;
-    height: 42px; }
-  .info_inner .plus {
-    background-image: url(../images/plus.png); }
-  .info_inner .minus {
-    background-image: url(../images/error.png); }
+    height: 42px;
+    transform: translateX(-100px);
+    animation: infoPlusMinus 1s .3s forwards; }
+  .info_inner .svg-rotate {
+    transition: transform .4s;
+    transform-origin: center; }
+  .info_inner .rotate-on {
+    transform: rotate(90deg); }
   .info_inner .text {
+    opacity: 0;
+    animation: opacityOn .8s 1.5s forwards;
     margin-left: 16px;
     font-size: 32px;
     font-weight: 300;
     color: #333; }
 
 .btn__show_select_line {
-  font-size: 20px;
-  display: inline-block;
   position: absolute;
-  right: 40px;
+  animation: show_select_line 1s forwards;
   top: 40px;
-  transition: transform .4s; }
-  .btn__show_select_line:hover {
-    transform: rotate(45deg); }
+  z-index: 2; }
+
+#plus {
+  transition: transform .4s;
+  transform-origin: center; }
+
+.btn__show_select_line:hover #plus {
+  transform: rotate(45deg); }
+
+.svg-open {
+  fill: #fff; }
+
+.select_level__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000; }
+
+.select_level__list {
+  font-size: 26px;
+  list-style: none;
+  color: #fff; }
+  .select_level__list .select_level-item {
+    margin-bottom: 12px; }
+  .select_level__list .select_level-link {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lato';
+    font-weight: 300; }

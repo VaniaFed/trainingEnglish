@@ -42,6 +42,14 @@ const counterSuccess = function(num) {
 
 const counterError = counterSuccess;
 
+const increaseNumber = function(inputNumber, range) {
+	let number = inputNumber || 0;
+	return function() {
+		number += range;
+		return number;
+	}
+};
+
 window.onload = function () {
 	const nextWord = function () {
 		currentEl = pickRandWord (wordsAndPhrases);
@@ -57,23 +65,47 @@ window.onload = function () {
 		return (inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1)
 	};
 
+	let
+		degreeRotateSuccess = increaseNumber(0, 90),
+		degreeRotateError = increaseNumber(0, 90);
 	const processRequest = function() {
+		let
+			svgPathError = document.querySelector('.minus .svg-rotate'),
+			svgPathSuccess = document.querySelector('.plus .svg-rotate');
+
 		if (checkAnswer ()) {
 			if (inputEl.classList.contains('input_answer-error')) {
 				inputEl.classList.remove('input_answer-error');
 			} else {
 				plusText.innerHTML = countSuccess();
+				svgPathSuccess.style.transform = 'rotate(' + degreeRotateSuccess() + 'deg)';
 			}
+			
 			nextWord ();
 			clearInputVal ();
-
 			textEl.innerHTML = currentQuestion;
 		} else {
+			svgPathError.style.transform = 'rotate(' + degreeRotateError() + 'deg)';
 			minusText.innerHTML = countError();
 			inputEl.classList.add('input_answer-error');
+			//inputEl.classList.add('animation_error');
+			//inputEl.addEventListener('transitionend', function() {
+			//	inputEl.classList.remove('animation_error');
+			//});
 			inputEl.value = currentAnswer;
 		}
-	}
+	};
+
+	const showElement = function(el) {
+		el.classList.toggle('hide');
+	};
+
+	const closeContainer = function(element) {
+		let listContainer 	= 	document.querySelector('.select_level__container'),
+			svgOpenList 	= 	document.getElementById('Capa_1');
+		showElement (listContainer);
+		svgOpenList.classList.toggle('svg-open');
+	};
 
 	let basicLineJSON = `[
 		{
@@ -835,6 +867,7 @@ window.onload = function () {
 		wordsAndPhrases 	=	JSON.parse(basicLineJSON),
 		textEl 				=	document.querySelector('.text_question'),
 		buttonEl 			=	document.querySelector('.btn_check_word'),
+		buttonOpenList		=	document.querySelector('.btn__show_select_line'),
 		inputEl 			=	document.querySelector('.input_answer'),
 		currentEl 			=	pickRandWord (wordsAndPhrases),
 		currentQuestion 	=	currentEl['question'],
@@ -847,6 +880,7 @@ window.onload = function () {
 
 	let countSuccess = counterSuccess(1);
 	let countError = counterError(1);
+
 	buttonEl.addEventListener('click', function() {
 		processRequest ();
 		inputEl.focus();
@@ -857,5 +891,9 @@ window.onload = function () {
 		if (e.code === 'Enter') {
 			processRequest ();
 		}
+	});
+
+	buttonOpenList.addEventListener('click', function() {
+		closeContainer ();
 	});
 };
