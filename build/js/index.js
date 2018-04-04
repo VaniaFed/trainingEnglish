@@ -16,27 +16,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 'use strict';
 
-/*
-JSON.parse – читает объекты из строки в формате JSON.
-
-let numbers = "[0, 1, 2, 3]";
-
-numbers = JSON.parse(numbers);
-
-alert( numbers[1] ); // 1
-
-Or so:
-
-
-let user = '{ "name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
-
-user = JSON.parse(user);
-
-alert( user.friends[1] ); // 1
-
-
-*/
-
 const pickRandWord = function(el) {
 	let max = el.length,
 		min = 0,
@@ -50,7 +29,7 @@ const counterSuccess = function(num) {
 	return function() {
 		return count++;
 	}
-}
+};
 
 const counterError = counterSuccess;
 
@@ -80,6 +59,7 @@ window.onload = function () {
 	let
 		degreeRotateSuccess = increaseNumber(0, 90),
 		degreeRotateError = increaseNumber(0, 90);
+
 	const processRequest = function() {
 		let
 			svgPathError = document.querySelector('.minus .svg-rotate'),
@@ -100,23 +80,65 @@ window.onload = function () {
 			svgPathError.style.transform = 'rotate(' + degreeRotateError() + 'deg)';
 			minusText.innerHTML = countError();
 			inputEl.classList.add('input_answer-error');
-			//inputEl.classList.add('animation_error');
-			//inputEl.addEventListener('transitionend', function() {
-			//	inputEl.classList.remove('animation_error');
-			//});
 			inputEl.value = currentAnswer;
 		}
 	};
 
-	const showElement = function(el) {
-		el.classList.toggle('hide');
+	const toggleClassElement = function(el, className) {
+		el.classList.toggle(className);
 	};
 
-	const closeContainer = function(element) {
+	const toggleContainer = function() {
 		let listContainer 	= 	document.querySelector('.select_level__container'),
 			svgOpenList 	= 	document.getElementById('Capa_1');
-		showElement (listContainer);
+
+		if (listContainer.classList.contains('hide')) {
+			listContainer.style.display = 'block';
+			
+		} else {
+			const displayNone = function() {
+				listContainer.style.display = 'none';
+				this.removeEventListener('transitionend', displayNone)
+			};
+			listContainer.addEventListener('transitionend', displayNone);
+		}
+			listContainer.classList.toggle('hide');
+		
 		svgOpenList.classList.toggle('svg-open');
+	};
+
+	const closeContainer = function() {
+		let listContainer 	= 	document.querySelector('.select_level__container'),
+			svgOpenList 	= 	document.getElementById('Capa_1');
+		hideElement (listContainer);
+		svgOpenList.classList.remove('svg-open');
+	};
+
+	const pickNewJSON = function(currentJSON) {
+		wordsAndPhrases 	=	JSON.parse(currentJSON),
+		currentEl 			=	pickRandWord (wordsAndPhrases),
+		currentQuestion 	=	currentEl['question'],
+		currentAnswer 		=	currentEl['answer'];
+	};
+
+	const selectNewJSON = function() {
+		switch(this.innerHTML) {
+				case 'Main phrases': {
+					pickNewJSON (basicLineJSON);
+					toggleContainer ();
+					break;
+				};
+				case 'Special questions': {
+					pickNewJSON (questionsLineJSON);
+					toggleContainer ();
+					break;
+				};
+				case 'New words': {
+					pickNewJSON (newWordsLineJSON);
+					toggleContainer ();
+					break;
+				};
+			}
 	};
 
 	let basicLineJSON = `[
@@ -137,7 +159,7 @@ window.onload = function () {
 		},
 		{
 			"question": "Кто знает это?",
-			"answer": "Who know it",
+			"answer": "Who knows it",
 			"picture": "picture.jpg"
 		},
 		{
@@ -232,7 +254,7 @@ window.onload = function () {
 		},
 		{
 			"question": "Они дома",
-			"answer": "They are at home",
+			"answer": "They're at home",
 			"picture": "picture.jpg"
 		},
 		{
@@ -859,18 +881,445 @@ window.onload = function () {
 			"question": "Я пишу код с большим удовольствием",
 			"answer": "I write code with great pleasure",
 			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я дома",
+			"answer": "I'm at home",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Они на работе",
+			"answer": "They're at work",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Она здесь",
+			"answer": "She's here",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я уверен",
+			"answer": "I'm sure",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Очень мило с вашей стороны",
+			"answer": "That's very kind of you",
+			"picture": "picture.jpg"
 		}
 	]`;
 
 	let questionsLineJSON = `[
 		{
-			"question": "Что ты хочешь сказать?",
-			"answer": "What do you want to say",
+			"question": "Это полезный урок",
+			"answer": "It's a useful lesson",
 			"picture": "picture.jpg"
 		},
 		{
-			"question": "Что ты хочешь сказать?",
-			"answer": "What do you want to say",
+			"question": "Это высокий уровень",
+			"answer": "It's a high level",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это низкий уровень",
+			"answer": "It's a low level",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это важная деталь",
+			"answer": "It's an important detail",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это информативный урок",
+			"answer": "It's an informative lesson",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это слишком большая ошибка",
+			"answer": "It's too big mistake",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это очень маленькая ошибка",
+			"answer": "It's a very small mistake",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я лучший программист в мире",
+			"answer": "I'm the best programmer in the world",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это так скучно",
+			"answer": "It's so boring",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это слишком сложно",
+			"answer": "It's too difficult",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это слишком дорого",
+			"answer": "It's too expensive",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это слишком дешево",
+			"answer": "It's too cheap",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Тепло",
+			"answer": "It's warm",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Дождливо",
+			"answer": "It's rainy",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Жарко",
+			"answer": "It's hot",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Холодно",
+			"answer": "It's cold",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Темно",
+			"answer": "It's dark",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это холодный день",
+			"answer": "It's a cold day",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Я готов",
+			"answer": "I'm ready",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Справа",
+			"answer": "It's on the right",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Слева",
+			"answer": "It's on the left",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "У меня все хорошо",
+			"answer": "I'm fine",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это лучше",
+			"answer": "It's better",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это хуже",
+			"answer": "It's worse",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Она очень красивая девушка",
+			"answer": "She's a very beautiful girl",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Мы в парке",
+			"answer": "We're in the park",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Ты очень добрый",
+			"answer": "You're very kind",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Они богатые",
+			"answer": "They're rich",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Они бедные",
+			"answer": "They're poor",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Они ленивые",
+			"answer": "They're lazy",
+			"picture": "picture.jpg"
+		},{
+			"question": "Он её муж",
+			"answer": "He's her husbend",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Она его жена",
+			"answer": "She's his wife",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это очень мило с вашей стороны",
+			"answer": "That's very kind of you",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Она испытывает жажду",
+			"answer": "She's thirsty",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такая интересная история",
+			"answer": "It's such an interesting story",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такая важная встреча",
+			"answer": "It's such an important meeting",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такая популярная песня",
+			"answer": "It's such a popular song",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такая дорогая машина",
+			"answer": "It's such an expensive car",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такая красивая девушка",
+			"answer": "It's such a beautiful girl",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это так легко",
+			"answer": "It's so easy",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это легкое упражнение",
+			"answer": "It's an easy exercise",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такое полезное видео",
+			"answer": "It's such a useful video",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это такая плохая ситуация",
+			"answer": "It's such a bad situation",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Он такой странный человек",
+			"answer": "He's such a strange person",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Он такой умный студент",
+			"answer": "He's such a clever student",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Он такой бедный мальчик",
+			"answer": "He's such a poor boy",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Она такая мудрая женщина",
+			"answer": "She's such a wise woman",
+			"picture": "picture.jpg"
+		}
+	]`;
+
+	let newWordsLineJSON = `[
+		{
+			"question": "Поддерживать",
+			"answer": "Keep up",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Вдохновение",
+			"answer": "Inspiration",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Недоумение",
+			"answer": "Perplexity",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Жаловаться",
+			"answer": "Complain",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Впечатление",
+			"answer": "impression",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Идти назад",
+			"answer": "Walk back",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Обещать",
+			"answer": "Promise",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Сомнительно",
+			"answer": "Doubtfully",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "В браке",
+			"answer": "Married",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Выйти",
+			"answer": "Went out",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Решение",
+			"answer": "Decision",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Теряться",
+			"answer": "Get lost",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Ожидать",
+			"answer": "Expect",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Богатый",
+			"answer": "Rich",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Добрый",
+			"answer": "Kind",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Бедный",
+			"answer": "Poor",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Ленивый",
+			"answer": "Lazy",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Жена",
+			"answer": "Wife",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Дорого",
+			"answer": "Expensive",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Дешево",
+			"answer": "Cheap",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Тепло",
+			"answer": "Warm",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Замечательно",
+			"answer": "Wonderful",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Великолепно",
+			"answer": "Great",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это возможно",
+			"answer": "It's possible",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Это невозможно",
+			"answer": "It's impossible",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Очевидный",
+			"answer": "Obvious",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Простой",
+			"answer": "Simple",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Медсестра",
+			"answer": "Nurse",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Обувь",
+			"answer": "Shoes",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Предложение (в языке)",
+			"answer": "Sentence",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Жаждущий",
+			"answer": "Thirsty",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Умный",
+			"answer": "Clever",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Смышленый",
+			"answer": "Smart",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Мудрый (прил.)",
+			"answer": "Wise",
+			"picture": "picture.jpg"
+		},
+		{
+			"question": "Мудрый (сущ.)",
+			"answer": "Sage",
 			"picture": "picture.jpg"
 		}
 	]`;
@@ -906,8 +1355,17 @@ window.onload = function () {
 	});
 
 	buttonOpenList.addEventListener('click', function() {
-		closeContainer ();
+		toggleContainer ();
 	});
+
+	let listSelect = document.querySelectorAll('.select_level-link');
+	for (var i = 0; i < listSelect.length; i++) {
+		listSelect[i].addEventListener('click', function() {
+			selectNewJSON.call (this);
+			nextWord ();
+			textEl.innerHTML = currentQuestion;
+		});
+	}
 };
 
 
