@@ -91,7 +91,8 @@ input {
 }
 
 .hide {
-	display: none;
+	opacity: 0;
+	transition: opacity .4s;
 }
 
 html, body {
@@ -257,9 +258,12 @@ body {
 
 .svg-open {
 	fill: #fff;
+	transform: rotate(-45deg);
+	transition: transform .4s;
 }
 
 .select_level__container {
+	display: none;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -275,14 +279,21 @@ body {
 .select_level__list {
 	font-size: 26px;
 	list-style: none;
-	color: #fff;
+	max-width: 100%;
+	overflow: hidden;
 	.select_level-item {
-		margin-bottom: 12px;
+		margin-bottom: 15px;
+		transition: transform .3s;
+		&:hover {
+			color: #fff;
+			transform: scale(2);
+		}
 	}
 	.select_level-link {
 		text-decoration: none;
-		color: #fff;
+		color: #ddd;
 		font-family: 'Lato';
 		font-weight: 300;
+		padding: 5px;
 	}
 }
