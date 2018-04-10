@@ -1,4 +1,4 @@
-
+/*dfd*/
 import "./normalize.css";
 import "./index.scss";
 'use strict';
@@ -27,22 +27,36 @@ const increaseNumber = function(inputNumber, range) {
     }
 };
 
-const openJSON = function(fileName) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', '/js/' + fileName);
-
-    return xhr;
-};
-
 const getJSON = function(xhr) {
-    xhr.onload = function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                return currentJSON = xhr.responseText;
-            }
+    try {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            return xhr.responseText; 
+        } else {
+            throw new syntaxError('Данные не получены');
         }
     }
+    catch (e) {
+        console.log('It\' so bad');
+    }
 };
+
+const openJSON = function(fileName) {
+    /*let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/js/' + fileName);
+
+    let currentStringJSON = getJSON (xhr);
+    xhr.send();
+    return currentStringJSON;
+*/
+    let jsonString = fetch('/js/' + fileName) 
+        .then(function(response) {
+            console.log(response.headers.get('Content-type'));
+            console.log(response.status);
+            return response.json();
+        });
+    return jsonString;
+};
+
 
 
 window.onload = function () {
@@ -126,28 +140,29 @@ window.onload = function () {
     };
 
     const selectNewJSON = function() {
+        var currentStringJSON;
+
         switch(this.innerHTML) {
-                case 'Main phrases': {
-                    getNewJSON (basicLineJSON);
-                    toggleContainer ();
-                    break;
-                };
-                case 'Special questions': {
-                    getNewJSON (questionsLineJSON);
-                    toggleContainer ();
-                    break;
-                };
-                case 'New words': {
-                    getNewJSON (newWordsLineJSON);
-                    toggleContainer ();
-                    break;
-                };
-                case 'Antonyms': {
-                    getNewJSON (antonymsLineJSON);
-                    toggleContainer ();
-                    break;
-                };
-            }
+            case 'Main phrases': {
+                currentStringJSON = openJSON('basicLine.json'); 
+                break;
+            };
+            case 'Special questions': {
+                currentStringJSON = openJSON('questionsLine.json');
+                break;
+            };
+            case 'New words': {
+                currentStringJSON = openJSON('newWordsLine.json');
+                break;
+            };
+            case 'Antonyms': {
+                currentStringJSON = openJSON('antonymsLine.json');
+                break;
+            };
+        }
+        
+        getNewJSON (currentStringJSON);
+        toggleContainer ();
     };
 
     let basicLineJSON = `[
@@ -1781,11 +1796,11 @@ window.onload = function () {
             "picture": "picture.jpg"
         }
     ]`;
-    let currentFileJSON = openJSON('listData.json'),
-        currentStringJSON = getJSON(currentFileJSON);
+    let currentStringJSON = openJSON('questionsLine.json');
 
+    console.log(currentStringJSON);
     var 
-        wordsAndPhrases     =   JSON.parse(currentStringJSON),
+        wordsAndPhrases     =   currentStringJSON.PromiseValue,
         buttonEl            =   document.querySelector('.btn_check_word'),
         buttonOpenList      =   document.querySelector('.btn__show_select_line'),
         inputEl             =   document.querySelector('.input_answer'),
