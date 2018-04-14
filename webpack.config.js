@@ -10,6 +10,7 @@ const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const canvas = require('./webpack/canvas');
+const jsonLoader = require('./webpack/json-loader');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
@@ -49,7 +50,8 @@ module.exports = function(env) {
         return merge([
             common,
             canvas,
-            extractCSS()
+            extractCSS(),
+            jsonLoader
             //uglifyJS()
         ]);
     }
@@ -59,7 +61,8 @@ module.exports = function(env) {
             canvas,
             devserver(),
             sass(),
-            css()
+            css(),
+            jsonLoader
         ])
     }
 };

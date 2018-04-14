@@ -48,7 +48,7 @@ const openJSON = function(fileName) {
     xhr.send();
     return currentStringJSON;
 */
-    let jsonString = fetch('/js/' + fileName) 
+    let jsonString = fetch('/' + fileName) 
         .then(function(response) {
             console.log(response.headers.get('Content-type'));
             console.log(response.status);
