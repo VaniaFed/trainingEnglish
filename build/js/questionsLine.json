@@ -1,0 +1,525 @@
+[{
+    "question": "Это полезный урок",
+    "answer": "It's a useful lesson",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это высокий уровень",
+    "answer": "It's a high level",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это низкий уровень",
+    "answer": "It's a low level",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это важная деталь",
+    "answer": "It's an important detail",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это информативный урок",
+    "answer": "It's an informative lesson",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это слишком большая ошибка",
+    "answer": "It's too big mistake",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это очень маленькая ошибка",
+    "answer": "It's a very small mistake",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Я лучший программист в мире",
+    "answer": "I'm the best programmer in the world",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это так скучно",
+    "answer": "It's so boring",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это слишком сложно",
+    "answer": "It's too difficult",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это слишком дорого",
+    "answer": "It's too expensive",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это слишком дешево",
+    "answer": "It's too cheap",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Тепло",
+    "answer": "It's warm",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Дождливо",
+    "answer": "It's rainy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Жарко",
+    "answer": "It's hot",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Холодно",
+    "answer": "It's cold",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Темно",
+    "answer": "It's dark",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это холодный день",
+    "answer": "It's a cold day",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Я готов",
+    "answer": "I'm ready",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Справа",
+    "answer": "It's on the right",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Слева",
+    "answer": "It's on the left",
+    "picture": "picture.jpg"
+},
+{
+    "question": "У меня все хорошо",
+    "answer": "I'm fine",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это лучше",
+    "answer": "It's better",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это хуже",
+    "answer": "It's worse",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она очень красивая девушка",
+    "answer": "She's a very beautiful girl",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мы в парке",
+    "answer": "We're in the park",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Ты очень добрый",
+    "answer": "You're very kind",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они богатые",
+    "answer": "They're rich",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они бедные",
+    "answer": "They're poor",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они ленивые",
+    "answer": "They're lazy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он её муж",
+    "answer": "He's her husbend",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она его жена",
+    "answer": "She's his wife",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это очень мило с вашей стороны",
+    "answer": "That's very kind of you",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она испытывает жажду",
+    "answer": "She's thirsty",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такая интересная история",
+    "answer": "It's such an interesting story",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такая важная встреча",
+    "answer": "It's such an important meeting",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такая популярная песня",
+    "answer": "It's such a popular song",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такая дорогая машина",
+    "answer": "It's such an expensive car",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такая красивая девушка",
+    "answer": "It's such a beautiful girl",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это так легко",
+    "answer": "It's so easy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это легкое упражнение",
+    "answer": "It's an easy exercise",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такое полезное видео",
+    "answer": "It's such a useful video",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такая плохая ситуация",
+    "answer": "It's such a bad situation",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он такой странный человек",
+    "answer": "He's such a strange person",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он такой умный студент",
+    "answer": "He's such a clever student",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он такой бедный мальчик",
+    "answer": "He's such a poor boy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она такая мудрая женщина",
+    "answer": "She's such a wise woman",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Я уверен",
+    "answer": "I'm sure",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Очень мило с вашей стороны",
+    "answer": "That's very kind of you",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Эти студенты такие трудолюбивые",
+    "answer": "These students are so hard-working",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Все твои видео такие интересные",
+    "answer": "All your videos are so interesting",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мой босс сейчас очень занят",
+    "answer": "My boss is very busy now",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Её босс очень занят в настоящий момент",
+    "answer": "Her boss is very busy at the moment",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мальчик очень умный",
+    "answer": "The boy is very clever",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Этот мальчик очень умный",
+    "answer": "This boy is very clever",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Урок очень важный",
+    "answer": "The lesson is very important",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Этот мужчина доктор",
+    "answer": "This man is a doctor",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Эти мужчины менеджеры",
+    "answer": "These men are managers",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Та женщина дизайнер",
+    "answer": "That woman is a designer",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Те женщины учителя",
+    "answer": "Those women are teacher",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Эта очень большая проблема",
+    "answer": "This is a very big problem",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Этот год сложный",
+    "answer": "This year is difficult",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Компьютер новый",
+    "answer": "The computer is new",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Очень хорошая машина",
+    "answer": "The car is very good",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Экзамен легкий",
+    "answer": "The exam is easy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Урок такой интересный",
+    "answer": "The lesson is so interesting",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Правило очень важное",
+    "answer": "The rule is very important",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Правило очень важное",
+    "answer": "The rule is very important",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Вещь слишком дорогая",
+    "answer": "The thing is too expensive",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Время - деньги",
+    "answer": "Time is money",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Вещь слишком дорогая",
+    "answer": "The thing is too expensive",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Английский - легкий",
+    "answer": "English is easy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Любовь - это прекрасное чувство",
+    "answer": "Love is a wonderful feeling",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Знания - сила",
+    "answer": "Knowledge is power",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он Американец",
+    "answer": "He's American",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мне 18",
+    "answer": "I'm eighteen years old",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Моей сестре 10",
+    "answer": "My sister is ten years old",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Его жене 28 лет",
+    "answer": "His wife is twenty-eight years old",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Я холост",
+    "answer": "I'm single",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мы не устали",
+    "answer": "We aren't tired",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мы полны энергии",
+    "answer": "We're full of energy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Я не в браке",
+    "answer": "I'm not married",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Я не учитель",
+    "answer": "I'm not a teacher",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мы не тупые",
+    "answer": "We aren't stupid",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Мы очень умные",
+    "answer": "We're very clever",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Ты не на первом месте",
+    "answer": "You are't in the first place",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Ты на втором месте",
+    "answer": "You're in the second place",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они не вместе",
+    "answer": "They aren't together",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они не мои коллеги",
+    "answer": "They aren't my colleagues",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они неуспешные",
+    "answer": "The aren't successful",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Они не бизнесмены",
+    "answer": "They aren't businessmen",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он не старый",
+    "answer": "He isn't old",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он очень молодой",
+    "answer": "He's very young",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он не директор",
+    "answer": "He isn't a director",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Он не в городе",
+    "answer": "He isn't in the city",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она не здесь",
+    "answer": "She isn't here",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она не певица",
+    "answer": "She isn't a singer",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она актриса",
+    "answer": "She's an actress",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она не свободна",
+    "answer": "She isn't free",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Она не с ним",
+    "answer": "She isn't with him",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это не так легко",
+    "answer": "It isn't so easy",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это не далеко",
+    "answer": "It isn't far",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это рядом",
+    "answer": "It's near",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это не хороший метод",
+    "answer": "It isn't good method",
+    "picture": "picture.jpg"
+},
+{
+    "question": "Это такой плохой метод",
+    "answer": "It's such a bad method",
+    "picture": "picture.jpg"
+}]
