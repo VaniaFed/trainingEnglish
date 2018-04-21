@@ -1,4 +1,3 @@
-/*dfd*/
 import "./normalize.css";
 import "./index.scss";
 'use strict';
@@ -28,33 +27,28 @@ const increaseNumber = function(inputNumber, range) {
 };
 
 const getJSON = function(xhr) {
-    try {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            return xhr.responseText; 
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        if (xhr.status != 200) {
+            console.log('ERROR: ' + xhr.status + ': ' + xhr.statusText);
         } else {
-            throw new syntaxError('Данные не получены');
+            return xhr.responseText;
         }
-    }
-    catch (e) {
-        console.log('It\' so bad');
     }
 };
 
 const openJSON = function(fileName) {
-    /*let xhr = new XMLHttpRequest();
-    xhr.open('GET', '/js/' + fileName);
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', fileName);
 
-    let currentStringJSON = getJSON (xhr);
     xhr.send();
-    return currentStringJSON;
-*/
-    let jsonString = fetch('/js/' + fileName) 
-        .then(function(response) {
-            console.log(response.headers.get('Content-type'));
-            console.log(response.status);
-            return response.json();
-        });
-    return jsonString;
+
+    if (xhr.status != 200) {
+        console.log('ERROR: ' + xhr.status + ': ' + xhr.statusText);
+    } else {
+        return JSON.parse(xhr.responseText);
+    }
 };
 
 
