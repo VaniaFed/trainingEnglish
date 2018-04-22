@@ -39,6 +39,10 @@ const openJSON = function(fileName) {
     }
 };
 
+const speakText = function(textForSpeak) {
+    responsiveVoice.speak(textForSpeak);
+}
+
 window.onload = function () {
     const nextWord = function () {
         currentEl = pickRandWord (wordsAndPhrases);
@@ -71,8 +75,9 @@ window.onload = function () {
                 svgPathSuccess.style.transform = 'rotate(' + degreeRotateSuccess() + 'deg)';
             }
             
-            nextWord ();
-            clearInputVal ();
+            speakText(currentAnswer);
+            nextWord();
+            clearInputVal();
             textEl.innerHTML = currentQuestion;
         } else {
             svgPathError.style.transform = 'rotate(' + degreeRotateError() + 'deg)';
