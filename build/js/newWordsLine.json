@@ -1,126 +1,74 @@
-[{
-		"question": "Rich",
-		"answer": "Poor",
-		"picture": "picture.jpg"
+[
+    {
+		"question": "Эффективность (Производительность)",
+		"answer": "Performance"
 	},
-	{
-		"question": "Poor",
-		"answer": "Rich",
-		"picture": "picture.jpg"
+    {
+		"question": "Сложение",
+		"answer": "Addition"
 	},
-	{
-		"question": "Cheap",
-		"answer": "Expensive",
-		"picture": "picture.jpg"
+    {
+		"question": "Вычитание",
+		"answer": "Substraction"
 	},
-	{
-		"question": "Expensive",
-		"answer": "Cheap",
-		"picture": "picture.jpg"
+    {
+		"question": "Умножение",
+		"answer": "Multiplication"
 	},
-	{
-		"question": "Woman",
-		"answer": "Man",
-		"picture": "picture.jpg"
+    {
+		"question": "Деление",
+		"answer": "Division"
 	},
-	{
-		"question": "Wife",
-		"answer": "Husbend",
-		"picture": "picture.jpg"
+    {
+		"question": "Сравнение",
+		"answer": "Comparing"
 	},
-	{
-		"question": "Husbend",
-		"answer": "Wife",
-		"picture": "picture.jpg"
+    {
+		"question": "Выбор",
+		"answer": "Selection"
 	},
-	{
-		"question": "Easy",
-		"answer": "Difficult",
-		"picture": "picture.jpg"
+    {
+		"question": "Дело",
+		"answer": "Deal"
 	},
-	{
-		"question": "Difficult",
-		"answer": "Easy",
-		"picture": "picture.jpg"
+    {
+		"question": "Получать",
+		"answer": "Obtain"
 	},
-	{
-		"question": "Better",
-		"answer": "Worse",
-		"picture": "picture.jpg"
+    {
+		"question": "Выполнять",
+		"answer": "Execute"
 	},
-	{
-		"question": "Worse",
-		"answer": "Better",
-		"picture": "picture.jpg"
+    {
+		"question": "Цифровой",
+		"answer": "Digital"
 	},
-	{
-		"question": "Hot",
-		"answer": "Cold",
-		"picture": "picture.jpg"
+    {
+		"question": "Вместимость",
+		"answer": "Capacity"
 	},
-	{
-		"question": "Cold",
-		"answer": "Hot",
-		"picture": "picture.jpg"
+    {
+		"question": "Еденицы",
+		"answer": "Units"
 	},
-	{
-		"question": "Low",
-		"answer": "High",
-		"picture": "picture.jpg"
+    {
+		"question": "Единицы измерения",
+		"answer": "Unit"
 	},
-	{
-		"question": "High",
-		"answer": "Low",
-		"picture": "picture.jpg"
+    {
+		"question": "Постоянный",
+		"answer": "Permanent"
 	},
-	{
-		"question": "Stupid",
-		"answer": "Clever",
-		"picture": "picture.jpg"
+    {
+		"question": "Широкий",
+		"answer": "Wide"
 	},
-	{
-		"question": "Clever",
-		"answer": "Stupid",
-		"picture": "picture.jpg"
+    {
+		"question": "Цель",
+		"answer": "Target"
 	},
-	{
-		"question": "Kind",
-		"answer": "Angry",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Angry",
-		"answer": "Kind",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Sad",
-		"answer": "Happy",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Happy",
-		"answer": "Sad",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Young",
-		"answer": "Old",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Old",
-		"answer": "Young",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Far",
-		"answer": "Near",
-		"picture": "picture.jpg"
-	},
-	{
-		"question": "Near",
-		"answer": "Far",
-		"picture": "picture.jpg"
+    {
+		"question": "Короткий (краткий)",
+		"answer": "Brief"
 	}
 ]
