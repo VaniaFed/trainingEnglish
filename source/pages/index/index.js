@@ -2,157 +2,138 @@ import "./normalize.css";
 import "./index.scss";
 'use strict';
 
-const rand = function(min, max) {
-    return index = Math.floor(Math.random() * (max - min) + min);
-};
-
-class Counter {
-    constructor(start) {
-        this.count = start || 0;
-    }
-    tick() {
-        this.count++;
-    }
-    set(time, callback) {
-        const f = callback || function(){};
-        setInterval(fun, f);
-    }
-    get() {
-        return this.count;
-    }
-}
-const counterSuccess = new Counter();
-
-const counterError = new Counter();
-
-const getRequest = function(url, callback) {
-    const f = callback || function(data) {}; 
-    const request = new XMLHttpRequest ();
-
-    request.onreadystatechange = function() {
-        if (request.readyState === 4 && request.status === 200) {
-            f(this.response);
-        }
-    };
-
-    request.open('GET', url, false);
-    request.send();
-};
-
 window.onload = function () {
-    const nextWord = function () {
-        currentEl = pickRandWord (wordsAndPhrases);
-        currentQuestion = currentEl['question'];
-        currentAnswer = currentEl['answer'];
+    const getRandomNumberOfRande = function(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    };
+    const getRandomElementArray = function(arr) {
+        let randomIndex = getRandomNumberOfRande(0, arr.length);
+        return arr[randomIndex];
     };
 
-    const clearInputVal = function() {
-        inputEl.value = "";
-    };
+    class Counter {
+        constructor(start) {
+            this.count = start || 0;
+        }
+        tick() {
+            this.count++;
+        }
+        setTimer(time, callback) {
+            const f = callback || function(){};
+            setInterval(f, time);
+        }
+        getCount() {
+            return this.count;
+        }
+    }
 
-    const checkAnswer = function() {
-        return (inputEl.value.toLowerCase().indexOf(currentAnswer.toLowerCase(), 0) !== -1)
-    };
+    class Test {
+        constructor(JSONString) {
+            this.allCombinations = JSONString;
+            this.nextCombination();
+        }
+        nextCombination() {
+            this.currentCombination = getRandomElementArray(this.allCombinations);
+            console.log(this.currentCombination);
+            this.question = this.currentCombination['question'];
+            this.answer = this.currentCombination['answer'];
+        }
+        checkAnswer(userAnswer) {
+            return userAnswer.value.toLowerCase().indexOf(this.answer.toLowerCase(), 0) !== -1;
+        }
+        setCombination(JSONString) {
+            this.currentCombination = JSONString;
+        }
+    }
 
-    let
-        degreeRotateSuccess = increaseNumber(0, 90),
-        degreeRotateError = increaseNumber(0, 90);
-
-    const processRequest = function() {
-        let
-            svgPathError = document.querySelector('.minus .svg-rotate'),
-            svgPathSuccess = document.querySelector('.plus .svg-rotate');
-
-        if (checkAnswer ()) {
-            if (inputEl.classList.contains('input_answer-error')) {
-                inputEl.classList.remove('input_answer-error');
-            } else {
-                plusText.innerHTML = countSuccess();
-                svgPathSuccess.style.transform = 'rotate(' + degreeRotateSuccess() + 'deg)';
+    const getResultOfRequest = function(URL, callback) {
+        const f = callback || function(data) {}; 
+        const request = new XMLHttpRequest();
+        const checkRequest = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                f(this.response);
             }
-            
-            nextWord ();
-            clearInputVal ();
-            textEl.innerHTML = currentQuestion;
+        }
+
+        request.onreadystatechange = checkRequest;
+        request.open('GET', URL, false);
+        request.send();
+    };
+
+    const hideElement = function() {
+        this.classList.add('hide');
+        this.removeEventListener('transitionend', hideElement);
+    };
+    const showElement = function(el) {
+        el.classList.remove('hide');
+    };
+
+    const toggleVisibleOfElement = function(el) {
+        if (el.classList.contains('hide')) {
+            showElement(el);
         } else {
-            svgPathError.style.transform = 'rotate(' + degreeRotateError() + 'deg)';
-            minusText.innerHTML = countError();
-            inputEl.classList.add('input_answer-error');
-            inputEl.value = currentAnswer;
+            menuContainer.addEventListener('transitionend', hideElement);
         }
     };
 
-    const toggleClassElement = function(el, className) {
-        el.classList.toggle(className);
-    };
+    const toggleVisibleOfContainer = function() {
+        let menuContainer   =   document.querySelector('.select_level__container'),
+            imgOpenMenu     =   document.getElementById('Capa_1');
 
-    const toggleContainer = function() {
-        let listContainer   =   document.querySelector('.select_level__container'),
-            svgOpenList     =   document.getElementById('Capa_1');
-
-        if (listContainer.classList.contains('hide')) {
-            listContainer.style.display = 'block';
-            
-        } else {
-            const displayNone = function() {
-                listContainer.style.display = 'none';
-                this.removeEventListener('transitionend', displayNone)
-            };
-            listContainer.addEventListener('transitionend', displayNone);
-        }
-            listContainer.classList.toggle('hide');
-        
-        svgOpenList.classList.toggle('svg-open');
+        toggleVisibleOfElement(menuContainer);
+        imgOpenMenu.classList.toggle('svg-open');
     };
 
     const closeContainer = function() {
-        let listContainer   =   document.querySelector('.select_level__container'),
-            svgOpenList     =   document.getElementById('Capa_1');
-        hideElement (listContainer);
-        svgOpenList.classList.remove('svg-open');
+        let menuContainer   =   document.querySelector('.select_level__container'),
+            imgOpenMenu     =   document.getElementById('Capa_1');
+
+        hideElement (menuContainer);
+        imgOpenMenu.classList.remove('svg-open');
     };
 
-    const getNewJSON = function(currentJSON) {
-        wordsAndPhrases     =   JSON.parse(currentJSON),
-        currentEl           =   pickRandWord (wordsAndPhrases),
-        currentQuestion     =   currentEl['question'],
-        currentAnswer       =   currentEl['answer'];
-    };
+    const setNewJSON = function(inputJSONName) {
+        let newJSONName;
 
-    const selectNewJSON = function(strName) {
-        let currentStringJSON;
-
-        switch(strName) {
+        switch(inputJSONName) {
             case 'Main phrases': {
-                currentStringJSON = openJSON('basicLine.json'); 
+                jsonData = getResultOfRequest('basicLine.json'); 
                 break;
             };
             case 'Special questions': {
-                currentStringJSON = openJSON('questionsLine.json');
+                jsonData = getResultOfRequest('questionsLine.json');
                 break;
             };
             case 'New words': {
-                currentStringJSON = openJSON('newWordsLine.json');
+                jsonData = getResultOfRequest('newWordsLine.json');
                 break;
             };
             case 'Antonyms': {
-                currentStringJSON = openJSON('antonymsLine.json');
+                jsonData = getResultOfRequest('antonymsLine.json');
                 break;
             };
         }
-        
-        getNewJSON (currentStringJSON);
-        toggleContainer ();
     };
 
-    console.log('Тут будет код');
+    let jsonData;
 
-    let requestData;
-
-    getRequest('./js/listData.json', (result) => {
-        requestData = result;
+    getResultOfRequest('./js/listData.json', (result) => {
+        jsonData = result;
     });
 
-    console.log(JSON.parse(requestData));
+    const test1 = new Test(JSON.parse(jsonData));
 
+    const
+            elInputAnswer = document.querySelector('.input_answer'),
+            elButtonCheck = document.querySelector('.btn_check_word');
+
+    const checkAnswerEvent = function() {
+        if (test1.checkAnswer()) {
+            console.log('Answer is correctly');
+        } else {
+            console.log('Answer isn\'t correctly');
+        }
+    };
+    elButtonCheck.addEventListener('click', checkAnswerEvent);
+            
 };
