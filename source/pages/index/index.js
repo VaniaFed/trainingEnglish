@@ -6,9 +6,8 @@ window.onload = function () {
     const getRandomNumberOfRande = function(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     };
-    const getRandomElementArray = function(arr) {
-        let randomIndex = getRandomNumberOfRande(0, arr.length);
-        return arr[randomIndex];
+    const getRandomIndexArray = function(arr) {
+        return getRandomNumberOfRande(0, arr.length);
     };
 
     class Counter {
@@ -32,14 +31,25 @@ window.onload = function () {
             this.allCombinations = JSONString;
             this.nextCombination();
         }
+        getAnswer() {
+            return this.answer;
+        }
+        getQuestion() {
+            return this.question;
+        }
         nextCombination() {
-            this.currentCombination = getRandomElementArray(this.allCombinations);
-            console.log(this.currentCombination);
+            this.currentIndex = getRandomIndexArray(this.allCombinations);
+            this.currentCombination = this.allCombinations[this.currentIndex];
             this.question = this.currentCombination['question'];
             this.answer = this.currentCombination['answer'];
+            console.log(this.currentCombination);
+        }
+        removeCurrentCombinationFromArray() {
+            this.allCombinations.splice(this.currentIndex, 1);
         }
         checkAnswer(userAnswer) {
-            return userAnswer.value.toLowerCase().indexOf(this.answer.toLowerCase(), 0) !== -1;
+            console.log(userAnswer);
+            return userAnswer.toLowerCase().indexOf(this.answer.toLowerCase(), 0) !== -1;
         }
         setCombination(JSONString) {
             this.currentCombination = JSONString;
@@ -123,17 +133,40 @@ window.onload = function () {
 
     const test1 = new Test(JSON.parse(jsonData));
 
-    const
-            elInputAnswer = document.querySelector('.input_answer'),
-            elButtonCheck = document.querySelector('.btn_check_word');
+    const elements = {
+        inputAnswer: document.querySelector('.input_answer'),
+        buttonCheck: document.querySelector('.btn_check_word'),
+        textQuestion: document.querySelector('.text_question'),
+        textCorrectlyAnswers: document.querySelector('#plus_text'),
+        textWrongAnswers: document.querySelector('#minus_text')
+    };
+
+    const quantityCorrectlyAnswers = new Counter(0);
+    const quantityWrondAnswers = new Counter(0);
 
     const checkAnswerEvent = function() {
-        if (test1.checkAnswer()) {
-            console.log('Answer is correctly');
+        console.log(test1.allCombinations);
+        if (test1.checkAnswer(elements.inputAnswer.value)) {
+            quantityCorrectlyAnswers.tick();
+            test1.removeCurrentCombinationFromArray();
         } else {
-            console.log('Answer isn\'t correctly');
+            quantityWrondAnswers.tick();
         }
+        test1.nextCombination();
+        updateElements();
     };
-    elButtonCheck.addEventListener('click', checkAnswerEvent);
-            
+    elements['buttonCheck'].addEventListener('click', checkAnswerEvent);
+    addEventListener('keydown', (e) => {
+        if (e.keyCode === 13) {
+            checkAnswerEvent();
+        }
+    });
+
+    const updateElements = function() {
+        elements['textQuestion'].innerHTML = test1.getQuestion();
+        elements['inputAnswer'].value = '';
+        elements['textCorrectlyAnswers'].innerHTML = quantityCorrectlyAnswers.getCount();
+        elements['textWrongAnswers'].innerHTML = quantityWrondAnswers.getCount();
+    }
+    updateElements();
 };
