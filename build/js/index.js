@@ -11,174 +11,178 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 'use strict';
-
 window.onload = function () {
-    const getRandomNumberOfRande = function(min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
-    };
-    const getRandomIndexArray = function(arr) {
+    var getRandomIndexArray = function (arr) {
         return getRandomNumberOfRande(0, arr.length);
     };
-
-    class Counter {
-        constructor(start) {
+    var getRandomNumberOfRande = function (min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    };
+    var Counter = /** @class */ (function () {
+        function Counter(start) {
             this.count = start || 0;
         }
-        tick() {
+        Counter.prototype.tick = function () {
             this.count++;
-        }
-        setTimer(time, callback) {
-            const f = callback || function(){};
+        };
+        Counter.prototype.setTimer = function (time, callback) {
+            var f = callback || function () { };
             setInterval(f, time);
-        }
-        getCount() {
+        };
+        Counter.prototype.getCount = function () {
             return this.count;
-        }
-    }
-
-    class Test {
-        constructor(JSONString) {
+        };
+        return Counter;
+    }());
+    var Test = /** @class */ (function () {
+        function Test(JSONString) {
             this.allCombinations = JSONString;
+            this.maxLength = this.allCombinations.length;
             this.nextCombination();
         }
-        getAnswer() {
-            return this.answer;
-        }
-        getQuestion() {
+        Test.prototype.getQuestion = function () {
             return this.question;
-        }
-        nextCombination() {
+        };
+        Test.prototype.getAnswer = function () {
+            return this.answer;
+        };
+        Test.prototype.getMaxLength = function () {
+            return this.maxLength;
+        };
+        Test.prototype.setCombination = function (JSONString) {
+            this.currentCombination = JSONString;
+        };
+        Test.prototype.nextCombination = function () {
             this.currentIndex = getRandomIndexArray(this.allCombinations);
             this.currentCombination = this.allCombinations[this.currentIndex];
             this.question = this.currentCombination['question'];
             this.answer = this.currentCombination['answer'];
-            console.log(this.currentCombination);
-        }
-        removeCurrentCombinationFromArray() {
+        };
+        Test.prototype.removeCurrentCombinationFromArray = function () {
             this.allCombinations.splice(this.currentIndex, 1);
-        }
-        checkAnswer(userAnswer) {
-            console.log(userAnswer);
+        };
+        Test.prototype.checkAnswer = function (userAnswer) {
+            console.log(this.answer);
             return userAnswer.toLowerCase().indexOf(this.answer.toLowerCase(), 0) !== -1;
-        }
-        setCombination(JSONString) {
-            this.currentCombination = JSONString;
-        }
-    }
-
-    const getResultOfRequest = function(URL, callback) {
-        const f = callback || function(data) {}; 
-        const request = new XMLHttpRequest();
-        const checkRequest = function() {
-            if (this.readyState === 4 && this.status === 200) {
+        };
+        return Test;
+    }());
+    var getResultOfRequest = function (URL, callback) {
+        var f = callback || function (data) { };
+        var request = new XMLHttpRequest();
+        var checkRequest = function () {
+            if (isRequestPostedWithoutErrors(this)) {
                 f(this.response);
             }
-        }
-
+        };
         request.onreadystatechange = checkRequest;
         request.open('GET', URL, false);
         request.send();
     };
-
-    const hideElement = function() {
+    var isRequestPostedWithoutErrors = function (request) {
+        return request.readyState === 4 && request.status === 200;
+    };
+    var hideElement = function () {
         this.classList.add('hide');
         this.removeEventListener('transitionend', hideElement);
     };
-    const showElement = function(el) {
+    var showElement = function (el) {
         el.classList.remove('hide');
     };
-
-    const toggleVisibleOfElement = function(el) {
-        if (el.classList.contains('hide')) {
-            showElement(el);
-        } else {
-            menuContainer.addEventListener('transitionend', hideElement);
-        }
-    };
-
-    const toggleVisibleOfContainer = function() {
-        let menuContainer   =   document.querySelector('.select_level__container'),
-            imgOpenMenu     =   document.getElementById('Capa_1');
-
+    var toggleVisibleOfContainer = function () {
+        var menuContainer = document.querySelector('.select_level__container'), imgOpenMenu = document.getElementById('Capa_1');
         toggleVisibleOfElement(menuContainer);
         imgOpenMenu.classList.toggle('svg-open');
     };
-
-    const closeContainer = function() {
-        let menuContainer   =   document.querySelector('.select_level__container'),
-            imgOpenMenu     =   document.getElementById('Capa_1');
-
-        hideElement (menuContainer);
-        imgOpenMenu.classList.remove('svg-open');
-    };
-
-    const setNewJSON = function(inputJSONName) {
-        let newJSONName;
-
-        switch(inputJSONName) {
-            case 'Main phrases': {
-                jsonData = getResultOfRequest('basicLine.json'); 
-                break;
-            };
-            case 'Special questions': {
-                jsonData = getResultOfRequest('questionsLine.json');
-                break;
-            };
-            case 'New words': {
-                jsonData = getResultOfRequest('newWordsLine.json');
-                break;
-            };
-            case 'Antonyms': {
-                jsonData = getResultOfRequest('antonymsLine.json');
-                break;
-            };
+    var toggleVisibleOfElement = function (el) {
+        if (el.classList.contains('hide')) {
+            showElement(el);
+        }
+        else {
+            el.addEventListener('transitionend', hideElement);
         }
     };
-
-    let jsonData;
-
-    getResultOfRequest('./js/listData.json', (result) => {
+    var closeContainer = function () {
+        var menuContainer = document.querySelector('.select_level__container'), imgOpenMenu = document.getElementById('Capa_1');
+        hideElement.call(menuContainer);
+        imgOpenMenu.classList.remove('svg-open');
+    };
+    var setNewJSON = function (inputJSONName) {
+        var newJSONName;
+        switch (inputJSONName) {
+            case 'Main phrases':
+                {
+                    getResultOfRequest('basicLine.json', function (result) { jsonData = result; });
+                    break;
+                }
+                ;
+            case 'Special questions':
+                {
+                    getResultOfRequest('questionsLine.json', function (result) { jsonData = result; });
+                    break;
+                }
+                ;
+            case 'New words':
+                {
+                    getResultOfRequest('newWordsLine.json', function (result) { jsonData = result; });
+                    break;
+                }
+                ;
+            case 'Antonyms':
+                {
+                    getResultOfRequest('antonymsLine.json', function (result) { jsonData = result; });
+                    break;
+                }
+                ;
+        }
+    };
+    // start is here
+    var jsonData;
+    var defaultJSONString = './js/basicLine.json';
+    getResultOfRequest(defaultJSONString, function (result) {
         jsonData = result;
     });
-
-    const test1 = new Test(JSON.parse(jsonData));
-
-    const elements = {
+    var test1 = new Test(JSON.parse(jsonData));
+    var elements = {
         inputAnswer: document.querySelector('.input_answer'),
         buttonCheck: document.querySelector('.btn_check_word'),
         textQuestion: document.querySelector('.text_question'),
         textCorrectlyAnswers: document.querySelector('#plus_text'),
-        textWrongAnswers: document.querySelector('#minus_text')
+        textWrongAnswers: document.querySelector('#minus_text'),
+        textCountSuccessAnswers: document.querySelector('.quantity__success'),
+        textCountAllAnswers: document.querySelector('.quantity__all')
     };
-
-    const quantityCorrectlyAnswers = new Counter(0);
-    const quantityWrondAnswers = new Counter(0);
-
-    const checkAnswerEvent = function() {
-        console.log(test1.allCombinations);
+    var quantityCorrectlyAnswers = new Counter(0);
+    var quantityWrondAnswers = new Counter(0);
+    var checkAnswerEvent = function () {
         if (test1.checkAnswer(elements.inputAnswer.value)) {
             quantityCorrectlyAnswers.tick();
             test1.removeCurrentCombinationFromArray();
-        } else {
+        }
+        else {
             quantityWrondAnswers.tick();
         }
         test1.nextCombination();
         updateElements();
     };
-    elements['buttonCheck'].addEventListener('click', checkAnswerEvent);
-    addEventListener('keydown', (e) => {
-        if (e.keyCode === 13) {
-            checkAnswerEvent();
-        }
-    });
-
-    const updateElements = function() {
+    var updateElements = function () {
         elements['textQuestion'].innerHTML = test1.getQuestion();
         elements['inputAnswer'].value = '';
         elements['textCorrectlyAnswers'].innerHTML = quantityCorrectlyAnswers.getCount();
         elements['textWrongAnswers'].innerHTML = quantityWrondAnswers.getCount();
-    }
+        elements['textCountSuccessAnswers'].innerHTML = quantityCorrectlyAnswers.getCount();
+        elements['textCountAllAnswers'].innerHTML = test1.getMaxLength();
+    };
     updateElements();
+    //handles
+    elements['buttonCheck'].addEventListener('click', checkAnswerEvent);
+    addEventListener('keydown', function (e) {
+        elements['inputAnswer'].focus();
+        if (e.keyCode === 13) {
+            checkAnswerEvent();
+            console.log(test1.allCombinations);
+        }
+    });
 };
 
 

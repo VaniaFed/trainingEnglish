@@ -13,14 +13,26 @@ const canvas = require('./webpack/canvas');
 const jsonLoader = require('./webpack/json-loader');
 
 const PATHS = {
-    source: path.join(__dirname, 'source'),
+    source: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'build')
 };
 
 const common = merge([
     {
         entry: {
-            'index': PATHS.source + '/pages/index/index.js'
+            'index': PATHS.source + '/index.ts'
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.ts?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/
+                }
+            ]
+        },
+        resolve: {
+            extensions: [ '.tsx', '.ts', '.js' ]
         },
         output: {
             path: PATHS.build,
@@ -30,7 +42,7 @@ const common = merge([
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 chunks: ['index', 'common'],
-                template: PATHS.source + '/pages/index/index.pug'
+                template: PATHS.source + '/index.pug'
             }),
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'common'
