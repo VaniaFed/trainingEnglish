@@ -1,590 +1,111 @@
 [
 	{
-		"question": "Что ты хочешь сказать?",
-		"answer": "What do you want to say?",
-    },
-	{
-		"question": "Что выглядит странным?",
-		"answer": "Whats look strange?",
-    },
-	{
-		"question": "Кого ты знаешь?",
-		"answer": "Who do you know?",
-	},
-	{
-		"question": "Кто знает это?",
-		"answer": "Who know it?",
-	},
-	{
-		"question": "Кого ты знаешь?",
-		"answer": "Who do you know?",
-	},
-	{
-		"question": "Какого рода книги ты читаешь?",
-		"answer": "What kind of books do you read?",
-	},
-	{
-		"question": "В какое время ты встаешь?",
-		"answer": "What time do you got up?",
-	},
-	{
-		"question": "Сколько денег у тебя с собой?",
-		"answer": "How much money do you have with you?",
-	},
-	{
-		"question": "Мне нравится это",
-		"answer": "I like it",
-	},
-	{
-		"question": "Кого ты знаешь?",
-		"answer": "Who do you know?",
-	},
-	{
-		"question": "Изучать Английский язык быстро",
-		"answer": "Learn English fast",
-	},
-	{
-		"question": "Говорить на Английском языке правильно",
-		"answer": "Speak English correctly",
-	},
-	{
-		"question": "Хорошая работа",
-		"answer": "Good job",
-	},
-	{
-		"question": "Прямо сейчас",
-		"answer": "Right now",
-	},
-	{
-		"question": "Еще один раз",
-		"answer": "One more time",
-	},
-	{
-		"question": "Я хочу жить за границей",
-		"answer": "I want to live abroad",
-	},
-	{
-		"question": "Спасибо большое",
-		"answer": "Thanks a lot",
-	},
-	{
-		"question": "Миллион раз спасибо",
-		"answer": "Thanks a million",
-	},
-	{
-		"question": "Упасть",
-		"answer": "Fell down",
-	},
-	{
-		"question": "Перерыв",
-		"answer": "Break time",
-	},
-	{
-		"question": "Поддерживать",
-		"answer": "Keep up",
-	},
-	{
-		"question": "Решать эту проблему",
-		"answer": "Solve this problem",
-	},
-	{
-		"question": "Они дома",
-		"answer": "They are at home",
-	},
-	{
-		"question": "Теряться",
-		"answer": "Get lost",
-	},
-	{
-		"question": "Время от времени",
-		"answer": "From time to time",
-	},
-	{
-		"question": "Поднять голову",
-		"answer": "Head up",
-	},
-	{
-		"question": "Платить за нее",
-		"answer": "Pay for her",
-	},
-	{
-		"question": "Как можно быстрее",
-		"answer": "As soon as possible",
-	},
-	{
-		"question": "Упасть",
-		"answer": "Fell over",
-	},
-	{
-		"question": "Садиться",
-		"answer": "Sit down",
-	},
-	{
-		"question": "Отдыхать на выходных",
-		"answer": "Have on weekends",
-	},
-	{
-		"question": "Работать над чем-то",
-		"answer": "Work on",
-	},
-	{
-		"question": "Свободное время",
-		"answer": "Free time",
-	},
-	{
-		"question": "Слушать музыку",
-		"answer": "Listen to music",
-	},
-	{
-		"question": "Искать работу",
-		"answer": "Look for a job",
-	},
-	{
-		"question": "Собираться ложиться спать",
-		"answer": "Going to bed",
-	},
-	{
-		"question": "Выйти",
-		"answer": "Went out",
-	},
-	{
-		"question": "От них всех",
-		"answer": "From them all",
-	},
-	{
-		"question": "Идти назад",
-		"answer": "Walk back",
-	},
-	{
-		"question": "Вся правда",
-		"answer": "All the trust",
-	},
-	{
-		"question": "Зависеть от тебя",
-		"answer": "Depend on you",
-	},
-	{
-		"question": "Произвести впечатление",
-		"answer": "Make an impression",
-	},
-	{
-		"question": "Проводить время",
-		"answer": "Spend time",
-	},
-	{
-		"question": "Добираться до работы",
-		"answer": "Get to work",
-	},
-	{
-		"question": "Какого рода?",
-		"answer": "What kind of?",
-	},
-	{
-		"question": "В какое время?",
-		"answer": "What time?",
-	},
-	{
-		"question": "Им",
-		"answer": "Them",
-	},
-	{
-		"question": "Сколько времени у тебя занимает добраться до работы?",
-		"answer": "How long time does it take you to get to work?",
-	},
-	{
-		"question": "Уходить из дома",
-		"answer": "Leave home",
-	},
-	{
-		"question": "Высокий",
-		"answer": "Tall",
-	},
-	{
-		"question": "Оставаться",
-		"answer": "Stay",
-	},
-	{
-		"question": "Скоро",
-		"answer": "Soon",
-	},
-	{
-		"question": "Родиться",
-		"answer": "Born",
-	},
-	{
-		"question": "В браке",
-		"answer": "Married",
-	},
-	{
-		"question": "Деревня",
-		"answer": "Village",
-	},
-	{
-		"question": "Доказывать",
-		"answer": "Prove",
-	},
-	{
-		"question": "Ожидать",
-		"answer": "Expect",
-	},
-	{
-		"question": "Еще",
-		"answer": "Yet",
-	},
-	{
-		"question": "Предпочитать",
-		"answer": "Prefer",
-	},
-	{
-		"question": "Наличные",
-		"answer": "Cash",
-	},
-	{
-		"question": "Вдохновение писать код",
-		"answer": "Inspiration to write code",
-	},
-	{
-		"question": "Тревога",
-		"answer": "Alarm",
-	},
-	{
-		"question": "Крыша",
-		"answer": "Roof",
-	},
-	{
-		"question": "Сомнительно",
-		"answer": "Doubtfully",
-	},
-	{
-		"question": "Встречаться",
-		"answer": "Meet",
-	},
-	{
-		"question": "Грязь",
-		"answer": "Dirt",
-	},
-	{
-		"question": "Сидеть",
-		"answer": "Sit",
-	},
-	{
-		"question": "Привычный",
-		"answer": "Habitual",
-	},
-	{
-		"question": "Платье",
-		"answer": "Dress",
-	},
-	{
-		"question": "Квартира",
-		"answer": "Flat",
-	},
-	{
-		"question": "Улучшать",
-		"answer": "Improve",
-	},
-	{
-		"question": "Лучше",
-		"answer": "Better",
-	},
-	{
-		"question": "Грамматика",
-		"answer": "Grammar",
-	},
-	{
-		"question": "Правильный",
-		"answer": "Correct",
-	},
-	{
-		"question": "Использовать (не use)",
-		"answer": "Employ",
-	},
-	{
-		"question": "Пачкать",
-		"answer": "Sully",
-	},
-	{
-		"question": "Мудрый",
-		"answer": "Sage",
-	},
-	{
-		"question": "Состоять",
-		"answer": "Consist",
-	},
-	{
-		"question": "Недоумение",
-		"answer": "Perplexity",
-	},
-	{
-		"question": "Приносить",
-		"answer": "Bring",
-	},
-	{
-		"question": "Тугой",
-		"answer": "Tight",
-	},
-	{
-		"question": "Соотношение",
-		"answer": "Ratio",
-	},
-	{
-		"question": "Купить",
-		"answer": "Buy",
-	},
-	{
-		"question": "Платить",
-		"answer": "Pay",
-	},
-	{
-		"question": "Снова",
-		"answer": "Again",
-	},
-	{
-		"question": "За границу",
-		"answer": "Abroad",
-	},
-	{
-		"question": "Другой",
-		"answer": "Another",
-	},
-	{
-		"question": "Обед",
-		"answer": "Lunch",
-	},
-	{
-		"question": "Стать",
-		"answer": "Become",
-	},
-	{
-		"question": "Обсуждать",
-		"answer": "Discuss",
-	},
-	{
-		"question": "Привлекать",
-		"answer": "Attract",
-	},
-	{
-		"question": "Рекомендовать",
-		"answer": "Recommend",
-	},
-	{
-		"question": "Партнер",
-		"answer": "Partner",
-	},
-	{
-		"question": "Счастье",
-		"answer": "Happiness",
-	},
-	{
-		"question": "Какие-либо (любые)",
-		"answer": "Any",
-	},
-	{
-		"question": "Вообще (совсем)",
-		"answer": "At all",
-	},
-	{
-		"question": "Совет",
-		"answer": "Advice",
-	},
-	{
-		"question": "Меньше",
-		"answer": "Less",
-	},
-	{
-		"question": "Единственное число",
-		"answer": "Singular",
-	},
-	{
-		"question": "Множественное число",
-		"answer": "Plural",
-	},
-	{
-		"question": "Заказывать",
-		"answer": "Order",
-	},
-	{
-		"question": "Мотивировать",
-		"answer": "Motivate",
-	},
-	{
-		"question": "Объяснять",
-		"answer": "Explain",
-	},
-	{
-		"question": "Тренировать",
-		"answer": "Train",
-	},
-	{
-		"question": "Память",
-		"answer": "Memory",
-	},
-	{
-		"question": "Регулярно",
-		"answer": "Regularly",
-	},
-	{
-		"question": "Самообразование",
-		"answer": "Self-education",
-	},
-	{
-		"question": "Решение",
-		"answer": "Decision",
-	},
-	{
-		"question": "Зал",
-		"answer": "Gym",
-	},
-	{
-		"question": "Достаточно",
-		"answer": "Enaugh",
-	},
-	{
-		"question": "Знания",
-		"answer": "Knowledge",
-	},
-	{
-		"question": "Услышать (слушать)",
-		"answer": "Hear",
-	},
-	{
-		"question": "Покой",
-		"answer": "Peace",
-	},
-	{
-		"question": "Пугать маленьких детей",
-		"answer": "Frighten little children",
-	},
-	{
-		"question": "Ужасный",
-		"answer": "Terrible",
-	},
-	{
-		"question": "Биение",
-		"answer": "Beating",
-	},
-	{
-		"question": "Стоять",
-		"answer": "Stand",
-	},
-	{
-		"question": "Муж",
-		"answer": "Husbend",
-	},
-	{
-		"question": "Кричать",
-		"answer": "Cry",
-	},
-	{
-		"question": "Похороны",
-		"answer": "Feneral",
-	},
-	{
-		"question": "Пугать",
-		"answer": "Frighten",
+		"question": "Похоронен",
+		"answer": "Buried"
 	},
 	{
-		"question": "Завещание",
-		"answer": "Will",
+		"question": "Я закрыл шторы",
+		"answer": "I cloused the curtains"
 	},
 	{
-		"question": "Трясет",
-		"answer": "Shaking",
+		"question": "Я влючил весь свет в доме",
+		"answer": "I turned on every light in the house"
 	},
 	{
-		"question": "Подготовить",
-		"answer": "Prepare",
+		"question": "Я положил больше углей в огонь",
+		"answer": "I put more coal in the fire"
 	},
 	{
-		"question": "Туман",
-		"answer": "Fog",
+		"question": "Я пошел наверх",
+		"answer": "I went upstairs"
 	},
 	{
-		"question": "Дышать вместе с тобой",
-		"answer": "Breathe with you",
+		"question": "Полчаса",
+		"answer": "Half of hour"
 	},
 	{
-		"question": "Накануне",
-		"answer": "Eve",
+		"question": "Просыпаться",
+		"answer": "Wake up"
 	},
 	{
-		"question": "Страх",
-		"answer": "Fear",
+		"question": "Рычать",
+		"answer": "Growl"
 	},
 	{
-		"question": "Вместе",
-		"answer": "Together",
+		"question": "Проход",
+		"answer": "Passage"
 	},
 	{
-		"question": "Важный",
-		"answer": "Important",
+		"question": "Нюхать",
+		"answer": "Sniffed"
 	},
 	{
-		"question": "Отличный",
-		"answer": "Excellent",
+		"question": "Медленно, я начал идти по направлению звука",
+		"answer": "Slowly, I began to walk torwards the sound"
 	},
 	{
-		"question": "Экзамен",
-		"answer": "Exam",
+		"question": "Мы оба тряслись от страха",
+		"answer": "We were both shaking with fear"
 	},
 	{
-		"question": "Блестяще",
-		"answer": "Brilliant",
+		"question": "Я почувствовал что-то теплое прижалось к моей ноге",
+		"answer": "I felt something warm against my let"
 	},
 	{
-		"question": "Жаловаться на плохую жизнь",
-		"answer": "Complain about a bad life",
+		"question": "Однако",
+		"answer": "However"
 	},
 	{
-		"question": "Отказываться от лишних денег",
-		"answer": "Refuse extra money",
+		"question": "Я работал усердно несколько часов",
+		"answer": "I worked hard for several hours"
 	},
 	{
-		"question": "Добавить",
-		"answer": "Add",
+		"question": "Рядом",
+		"answer": "Beside"
 	},
 	{
-		"question": "Беспокоить",
-		"answer": "Worry",
+		"question": "Во рту пересохло от страха",
+		"answer": "My mouth was dry with fear"
 	},
 	{
-		"question": "Фильм",
-		"answer": "Movie",
+		"question": "Пыль",
+		"answer": "Dust"
 	},
 	{
-		"question": "Разные",
-		"answer": "Different",
+		"question": "Рука",
+		"answer": "Arm"
 	},
 	{
-		"question": "Напиток",
-		"answer": "Drink",
+		"question": "Проход",
+		"answer": "Passage"
 	},
 	{
-		"question": "Уходить",
-		"answer": "Leave",
+		"question": "Мои пальцы",
+		"answer": "My fingers"
 	},
 	{
-		"question": "Упражнение",
-		"answer": "Exercise",
+		"question": "Я зажег свечу",
+		"answer": "I lit the candle"
 	},
 	{
-		"question": "Трудно",
-		"answer": "Difficult",
+		"question": "Некоторе время спустя, я уснул",
+		"answer": "Some time later, I fell asleep"
 	},
 	{
-		"question": "Что твой босс обычно обещает?",
-		"answer": "What does your boss usually promise?",
+		"question": "Что со мной случилось?",
+		"answer": "What happened to me?"
 	},
 	{
-		"question": "Я наслаждаюсь изучением Английского языка",
-		"answer": "I enjoy learn English",
+		"question": "Мы рядом с этим местом?",
+		"answer": "Are we near this place?"
 	},
 	{
-		"question": "Сколько по времени занимает у его дочери добраться в школу?",
-		"answer": "How long does it take his daughter to get to school?",
+		"question": "Этого платежа достаточно?",
+		"answer": "Is this payment enough?"
 	},
 	{
-		"question": "Почему твоя мама думает так?",
-		"answer": "Why does your mother think so?"
+		"question": "Этот мальчик его старший брат?",
+		"answer": "It this boy his elder brother?"
 	}
+
 ]

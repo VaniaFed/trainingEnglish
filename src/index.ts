@@ -2,6 +2,7 @@ import "./normalize.css";
 import "./index.scss"; 'use strict';
 
 window.onload = function () {
+    // help functions
     const getRandomIndexArray = function(arr: any[]): number {
         return getRandomNumberOfRande(0, arr.length);
     };
@@ -11,6 +12,7 @@ window.onload = function () {
 
     const getResultOfRequest = function(URL: string, callback: (data: any) => any): void  {
         const f = callback || function(data) {}; 
+
         const request = new XMLHttpRequest();
         const checkRequest = function () {
             if (isRequestPostedWithoutErrors(this)) {
@@ -82,7 +84,6 @@ window.onload = function () {
 
     class Counter {
         private count: number;
-
         constructor(start: number) {
             this.count = start || 0;
         }
@@ -172,32 +173,6 @@ window.onload = function () {
             this.setElements(elements);
             this.followToEventEnter();
         }
-        followToEventEnter () {
-            this.buttonCheck.addEventListener('click', this.checkAnswerEvent);
-            addEventListener('keydown', (e) => {
-                this.giveFocusInput();
-                if (e.keyCode === 13) {
-                    this.checkAnswerEvent();
-                }
-            });
-        }
-        giveFocusInput() {
-            this.inputAnswer.focus();
-        }
-        checkAnswerEvent(): void {
-            if (this.currentTest.checkAnswer(this.inputAnswer.value)) {
-                this.incCorrectAnswersAndRemoveCurrentCombinationFromArray();
-            } else {
-                this.counterWrongAnswers.tick();
-            }
-            this.currentTest.nextCombination();
-            this.updateElements();
-        };
-        incCorrectAnswersAndRemoveCurrentCombinationFromArray(): void {
-            this.counterCorrectlyAnswers.tick();
-            this.currentTest.removeCurrentCombinationFromArray();
-        }
-
         setElements(elements: any) {
             this.setInputAnswer(elements.inputAnswer);
             this.setButtonCheck(elements.buttonCheck);
@@ -227,21 +202,65 @@ window.onload = function () {
         setTextQuantityAllAnswersAtAll(element: HTMLElement): void {
             this.textQuantityAllAnswersAtAll = element;
         }
+        followToEventEnter () {
+            this.buttonCheck.addEventListener('click', this.checkAnswerEventAfterButtonClick);
+            addEventListener('keydown', (e) => {
+                this.giveFocusInput();
+                if (e.keyCode === 13) {
+                    if (this.isAnswerCorrectly()) {
+                        this.incCorrectAnswersAndRemoveCurrentCombination();
+                    } else {
+                        this.counterWrongAnswers.tick();
+                    }
+                    this.currentTest.nextCombination();
+                    this.updateElements();
+                }
+            });
+        }
+        checkAnswerEventAfterButtonClick(): void {
+            if (this.isAnswerCorrectly()) {
+                this.incCorrectAnswersAndRemoveCurrentCombination();
+            } else {
+                this.counterWrongAnswers.tick();
+            }
+            this.currentTest.nextCombination();
+            this.updateElements();
+        }
+        giveFocusInput() {
+            this.inputAnswer.focus();
+        }
+        isAnswerCorrectly(): boolean {
+            return this.currentTest.checkAnswer(this.inputAnswer.value);
+        }
+        incCorrectAnswersAndRemoveCurrentCombination(): void {
+            this.counterCorrectlyAnswers.tick();
+            this.currentTest.removeCurrentCombinationFromArray();
+        }
         updateElements() {
             this.updateInputAnswer();
             this.updateTextQuestion();
-            /** Продолжай с остальными*/
-            elements['textQuantityCorrectlyAnswers'].innerHTML = quantityCorrectlyAnswers.getCount();
-            elements['textQuantityWrongAnswers'].innerHTML = quantityWrondAnswers.getCount();
-
-            elements['textCountSuccessAnswersFromAll'].innerHTML = quantityCorrectlyAnswers.getCount();
-            elements['textCountAllAnswers'].innerHTML = test1.getMaxLength();
+            this.updateTextQuantityCorrectlyAnswers();
+            this.updateTextQuantityWrongAnswers();
+            this.updateCountSuccessAnswerFromAll();
+            this.updateCountAllAnswer();
         }
         updateInputAnswer() {
             this.inputAnswer.value = '';
         }
         updateTextQuestion() {
             this.textQuestion.innerHTML = this.currentTest.getQuestion();
+        }
+        updateTextQuantityCorrectlyAnswers() {
+            this.textQuantityCorrectlyAnswers.innerHTML = this.counterCorrectlyAnswers.getCount();
+        }
+        updateTextQuantityWrongAnswers() {
+            this.textQuantityWrongAnswers.innerHTML = this.counterWrongAnswers.getCount();
+        }
+        updateCountSuccessAnswerFromAll() {
+            this.textQuantityCorrectlyAnswersFromAll.innerHTML = this.counterCorrectlyAnswers.getCount();
+        }
+        updateCountAllAnswer() {
+            this.textQuantityAllAnswersAtAll.innerHTML = this.currentTest.getMaxLength();
         }
     }
 
@@ -263,5 +282,5 @@ window.onload = function () {
     };
 
     const myTestPage = new testPage(jsonData);
-    myTestPage.setElements(elements);
+    myTestPage.init(elements);
 };
