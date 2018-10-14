@@ -133,7 +133,7 @@
 	},
 	{
 		"question": "Я думаю, что ты идиот",
-		"answer": "I think that you idiot"
+		"answer": "I think that you're idiot"
 	},
 	{
 		"question": "Тебе нужно сделать это в следующем году?",
@@ -142,33 +142,5 @@
 	{
 		"question": "Тебе нужно закончить это к завтрашнему дню?",
 		"answer": "Do you need to finish it by tomorrow?"
-	},
-	{
-		"question": "Ты знаешь каждого?",
-		"answer": "Do you know each other?"
-	},
-	{
-		"question": "Они живут раздельно",
-		"answer": "They live separatly"
-	},
-	{
-		"question": "Она устала",
-		"answer": "She's tired"
-	},
-	{
-		"question": "Они боятся",
-		"answer": "They're afraid"
-	},
-	{
-		"question": "Я увлекаюсь программированием",
-		"answer": "I'm keen on programming"
-	},
-	{
-		"question": "Это интересует его?",
-		"answer": "Does it inserest him?"
-	},
-	{
-		"question": "Это интересует его",
-		"answer": "It inserests him"
-	},
+	}
 ]
