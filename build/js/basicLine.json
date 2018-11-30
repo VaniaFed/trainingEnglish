@@ -4,22 +4,6 @@
 		"answer": "Buried"
 	},
 	{
-		"question": "Я закрыл шторы",
-		"answer": "I cloused the curtains"
-	},
-	{
-		"question": "Я влючил весь свет в доме",
-		"answer": "I turned on every light in the house"
-	},
-	{
-		"question": "Я положил больше углей в огонь",
-		"answer": "I put more coal in the fire"
-	},
-	{
-		"question": "Я пошел наверх",
-		"answer": "I went upstairs"
-	},
-	{
 		"question": "Полчаса",
 		"answer": "Half of hour"
 	},
@@ -40,32 +24,12 @@
 		"answer": "Sniffed"
 	},
 	{
-		"question": "Медленно, я начал идти по направлению звука",
-		"answer": "Slowly, I began to walk torwards the sound"
-	},
-	{
-		"question": "Мы оба тряслись от страха",
-		"answer": "We were both shaking with fear"
-	},
-	{
-		"question": "Я почувствовал что-то теплое прижалось к моей ноге",
-		"answer": "I felt something warm against my let"
-	},
-	{
 		"question": "Однако",
 		"answer": "However"
 	},
 	{
-		"question": "Я работал усердно несколько часов",
-		"answer": "I worked hard for several hours"
-	},
-	{
 		"question": "Рядом",
 		"answer": "Beside"
-	},
-	{
-		"question": "Во рту пересохло от страха",
-		"answer": "My mouth was dry with fear"
 	},
 	{
 		"question": "Пыль",
@@ -76,71 +40,207 @@
 		"answer": "Arm"
 	},
 	{
-		"question": "Проход",
-		"answer": "Passage"
-	},
-	{
 		"question": "Мои пальцы",
 		"answer": "My fingers"
 	},
 	{
-		"question": "Я зажег свечу",
-		"answer": "I lit the candle"
+		"question": "Восхищаться",
+		"answer": "Admire"
 	},
 	{
-		"question": "Некоторе время спустя, я уснул",
-		"answer": "Some time later, I fell asleep"
+		"question": "Настоящее время",
+		"answer": "Nowadays"
 	},
 	{
-		"question": "Что со мной случилось?",
-		"answer": "What happened to me?"
+		"question": "Какими видео ты больше восхищаешься?",
+		"answer": "What videos do you admire more"
 	},
 	{
-		"question": "Мы рядом с этим местом?",
-		"answer": "Are we near this place?"
+		"question": "Какие каналы популярны в настоящее время",
+		"answer": "What channels are popular nowadays?"
 	},
 	{
-		"question": "Этого платежа достаточно?",
-		"answer": "Is this payment enough?"
+		"question": "Деньги - это только бумага",
+		"answer": "Money is only paper"
 	},
 	{
-		"question": "Этот мальчик его старший брат?",
-		"answer": "It this boy his elder brother?"
+		"question": "Некоторые люди говорят так",
+		"answer": "Some people say so"
 	},
 	{
-		"question": "Эта еда вкусная?",
-		"answer": "Is this food delicious?"
-	},
-	{
-		"question": "Эта еда очень вкусная?",
-		"answer": "Is this food very testy?"
-	},
-	{
-		"question": "Все студенты знают значение этого выражения?",
-		"answer": "Do all the students know the meaning of this expression?"
-	},
-	{
-		"question": "Какое значение этого слова?",
+		"question": "Какое значени этого слова?",
 		"answer": "What's the meaning of this word?"
 	},
 	{
-		"question": "Что это слово значит?",
-		"answer": "What does this word mean?"
+		"question": "Мне очень нравится этот канал",
+		"answer": "I like this channel a lot"
 	},
 	{
-		"question": "Что ты имеешь в виду?",
-		"answer": "What do you mean?"
+		"question": "Я прекрасно понимаю тебя",
+		"answer": "I perfectly understand you"
 	},
 	{
-		"question": "Я думаю, что ты идиот",
-		"answer": "I think that you're idiot"
+		"question": "Я прекрасно осознаю это",
+		"answer": "I perfectly realize it"
 	},
 	{
-		"question": "Тебе нужно сделать это в следующем году?",
-		"answer": "Do you need to do it next year?"
+		"question": "Они поддерживают это решение?",
+		"answer": "Do they support this decision?"
 	},
 	{
-		"question": "Тебе нужно закончить это к завтрашнему дню?",
-		"answer": "Do you need to finish it by tomorrow?"
+		"question": "Это невозможно",
+		"answer": "It's impossible"
+	},
+	{
+		"question": "Моего опыта достаточно?",
+		"answer": "Is my experience enough?"
+	},
+	{
+		"question": "Меня от тебя тошнит",
+		"answer": "You make me sick"
+	},
+	{
+		"question": "Мы видели это во втором предложении",
+		"answer": "We see it in the second sentence"
+	},
+	{
+		"question": "Предложение (в тексте)",
+		"answer": "Sentence"
+	},
+	{
+		"question": "Я бы хотел отблагодарить тебя за твою помощь",
+		"answer": "I'd like to thank you for your help"
+	},
+	{
+		"question": "Знание - сила?",
+		"answer": "Is knowledge power?"
+	},
+	{
+		"question": "Мне следует ходить в зал",
+		"answer": "I should go to the gym"
+	},
+	{
+		"question": "Он соревнуется (конкурирует) с ними?",
+		"answer": "Does he compete with them?"
+	},
+	{
+		"question": "Мой брат в ванной",
+		"answer": "My brother is in the bathroom"
+	},
+	{
+		"question": "Эти проблемы не волнуют меня",
+		"answer": "These problems don't worry me"
+	},
+	{
+		"question": "Женщины дома?",
+		"answer": "Are the women at home?"
+	},
+	{
+		"question": "(to be) Я обожаю этот канал благодаря нашему учителю",
+		"answer": "I'm fond of this channel thanks to our teacher"
+	},
+	{
+		"question": "Мне следует иметь больше практики",
+		"answer": "I should have more practice"
+	},
+	{
+		"question": "Какая работа твоего мужа?",
+		"answer": "What's your husbend's job?"
+	},
+	{
+		"question": "Он всегда обещает это",
+		"answer": "He always promises it"
+	},
+	{
+		"question": "Вы не знаете друг друга",
+		"answer": "You don't know each other"
+	},
+	{
+		"question": "Его решение правильное?",
+		"answer": "Is his decision right?"
+	},
+	{
+		"question": "Она может говорить по испански",
+		"answer": "She can speak spanish"
+	},
+	{
+		"question": "Я должен выучить английский",
+		"answer": "I must learn english"
+	},
+	{
+		"question": "Я возможно стану лучшим программист в мире",
+		"answer": "I may become the best programmer in the world"
+	},
+	{
+		"question": "Я обожаю писать код",
+		"answer": "I enjoy writing code"
+	},
+	{
+		"question": "Я обожаю делать это",
+		"answer": "I enjoy doing it"
+	},
+	{
+		"question": "Мне нравится это",
+		"answer": "I like doing it"
+	},
+	{
+		"question": "Мне нравится изучать Английский с тобой",
+		"answer": "I like learning english with you"
+	},
+	{
+		"question": "Мне нравится готовить",
+		"answer": "I like cooking"
+	},
+	{
+		"question": "Мне нравится плавать",
+		"answer": "I like swimming"
+	},
+	{
+		"question": "Я бы хотел жить в другой стране",
+		"answer": "I'd like to live in another country"
+	},
+	{
+		"question": "Я хочу читать другие книги",
+		"answer": "I want to read other books"
+	},
+	{
+		"question": "Другой",
+		"answer": "Another"
+	},
+	{
+		"question": "Другие",
+		"answer": "Other"
+	},
+	{
+		"question": "Она обычно говорит по английски очень медленно",
+		"answer": "She usually speaks english very slowly"
+	},
+	{
+		"question": "Я бы хотел поговорить об этом",
+		"answer": "I'd like to talk about it"
+	},
+	{
+		"question": "Это самая длинная река в мире",
+		"answer": "It's the longest river in the world"
+	},
+	{
+		"question": "Это видео очень длинное",
+		"answer": "This video is much longer"
+	},
+	{
+		"question": "Эта книга интересней",
+		"answer": "This book is more interesting"
+	},
+	{
+		"question": "Знания очень важны",
+		"answer": "Knowledge is very important"
+	},
+	{
+		"question": "",
+		"answer": ""
+	},
+	{
+		"question": "",
+		"answer": ""
 	}
 ]

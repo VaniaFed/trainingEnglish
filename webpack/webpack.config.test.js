@@ -1,3 +1,3 @@
-var config = require('../webpack.config.js');
+let config = require('../webpack.config.js').default;
 config.target = 'node';
 module.exports = config; 

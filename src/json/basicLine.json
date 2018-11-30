@@ -1,0 +1,350 @@
+[
+	{
+		"question": "Похоронен",
+		"answer": "Buried"
+	},
+	{
+		"question": "Полчаса",
+		"answer": "Half of hour"
+	},
+	{
+		"question": "Просыпаться",
+		"answer": "Wake up"
+	},
+	{
+		"question": "Рычать",
+		"answer": "Growl"
+	},
+	{
+		"question": "Проход",
+		"answer": "Passage"
+	},
+	{
+		"question": "Нюхать",
+		"answer": "Sniffed"
+	},
+	{
+		"question": "Однако",
+		"answer": "However"
+	},
+	{
+		"question": "Рядом",
+		"answer": "Beside"
+	},
+	{
+		"question": "Пыль",
+		"answer": "Dust"
+	},
+	{
+		"question": "Рука",
+		"answer": "Arm"
+	},
+	{
+		"question": "Мои пальцы",
+		"answer": "My fingers"
+	},
+	{
+		"question": "Восхищаться",
+		"answer": "Admire"
+	},
+	{
+		"question": "Настоящее время",
+		"answer": "Nowadays"
+	},
+	{
+		"question": "Какими видео ты больше восхищаешься?",
+		"answer": "What videos do you admire more"
+	},
+	{
+		"question": "Какие каналы популярны в настоящее время",
+		"answer": "What channels are popular nowadays?"
+	},
+	{
+		"question": "Деньги - это только бумага",
+		"answer": "Money is only paper"
+	},
+	{
+		"question": "Некоторые люди говорят так",
+		"answer": "Some people say so"
+	},
+	{
+		"question": "Какое значени этого слова?",
+		"answer": "What's the meaning of this word?"
+	},
+	{
+		"question": "Мне очень нравится этот канал",
+		"answer": "I like this channel a lot"
+	},
+	{
+		"question": "Я прекрасно понимаю тебя",
+		"answer": "I perfectly understand you"
+	},
+	{
+		"question": "Я прекрасно осознаю это",
+		"answer": "I perfectly realize it"
+	},
+	{
+		"question": "Они поддерживают это решение?",
+		"answer": "Do they support this decision?"
+	},
+	{
+		"question": "Это невозможно",
+		"answer": "It's impossible"
+	},
+	{
+		"question": "Моего опыта достаточно?",
+		"answer": "Is my experience enough?"
+	},
+	{
+		"question": "Меня от тебя тошнит",
+		"answer": "You make me sick"
+	},
+	{
+		"question": "Мы видели это во втором предложении",
+		"answer": "We see it in the second sentence"
+	},
+	{
+		"question": "Предложение (в тексте)",
+		"answer": "Sentence"
+	},
+	{
+		"question": "Я бы хотел отблагодарить тебя за твою помощь",
+		"answer": "I'd like to thank you for your help"
+	},
+	{
+		"question": "Знание - сила?",
+		"answer": "Is knowledge power?"
+	},
+	{
+		"question": "Мне следует ходить в зал",
+		"answer": "I should go to the gym"
+	},
+	{
+		"question": "Он соревнуется (конкурирует) с ними?",
+		"answer": "Does he compete with them?"
+	},
+	{
+		"question": "Мой брат в ванной",
+		"answer": "My brother is in the bathroom"
+	},
+	{
+		"question": "Эти проблемы не волнуют меня",
+		"answer": "These problems don't worry me"
+	},
+	{
+		"question": "Женщины дома?",
+		"answer": "Are the women at home?"
+	},
+	{
+		"question": "(to be) Я обожаю этот канал благодаря нашему учителю",
+		"answer": "I'm fond of this channel thanks to our teacher"
+	},
+	{
+		"question": "Мне следует иметь больше практики",
+		"answer": "I should have more practice"
+	},
+	{
+		"question": "Какая работа твоего мужа?",
+		"answer": "What's your husband's job?"
+	},
+	{
+		"question": "Он всегда обещает это",
+		"answer": "He always promises it"
+	},
+	{
+		"question": "Вы не знаете друг друга",
+		"answer": "You don't know each other"
+	},
+	{
+		"question": "Его решение правильное?",
+		"answer": "Is his decision right?"
+	},
+	{
+		"question": "Она может говорить по испански",
+		"answer": "She can speak spanish"
+	},
+	{
+		"question": "Я должен выучить английский",
+		"answer": "I must learn english"
+	},
+	{
+		"question": "Я возможно стану лучшим программист в мире",
+		"answer": "I may become the best programmer in the world"
+	},
+	{
+		"question": "Я обожаю писать код",
+		"answer": "I enjoy writing code"
+	},
+	{
+		"question": "Я обожаю делать это",
+		"answer": "I enjoy doing it"
+	},
+	{
+		"question": "Мне нравится это",
+		"answer": "I like doing it"
+	},
+	{
+		"question": "Мне нравится изучать Английский с тобой",
+		"answer": "I like learning english with you"
+	},
+	{
+		"question": "Мне нравится готовить",
+		"answer": "I like cooking"
+	},
+	{
+		"question": "Мне нравится плавать",
+		"answer": "I like swimming"
+	},
+	{
+		"question": "Я бы хотел жить в другой стране",
+		"answer": "I'd like to live in another country"
+	},
+	{
+		"question": "Я хочу читать другие книги",
+		"answer": "I want to read other books"
+	},
+	{
+		"question": "Другой",
+		"answer": "Another"
+	},
+	{
+		"question": "Другие",
+		"answer": "Other"
+	},
+	{
+		"question": "Она обычно говорит по английски очень медленно",
+		"answer": "She usually speaks english very slowly"
+	},
+	{
+		"question": "Я бы хотел поговорить об этом",
+		"answer": "I'd like to talk about it"
+	},
+	{
+		"question": "Это самая длинная река в мире",
+		"answer": "It's the longest river in the world"
+	},
+	{
+		"question": "Это видео очень длинное",
+		"answer": "This video is much long"
+	},
+	{
+		"question": "Эта книга интересней",
+		"answer": "This book is more interesting"
+	},
+	{
+		"question": "Знания очень важны",
+		"answer": "Knowledge is very important"
+	},
+	{
+		"question": "Мне следует заниматься английским более интенсивно",
+		"answer": "I should learn english more entensively"
+	},
+	{
+		"question": "Это кресло неудобное",
+		"answer": "This armchair is uncomfortable"
+	},
+	{
+		"question": "Как ты обычно отдыхаешь летом?",
+		"answer": "How do you usually have a rest in summer?"
+	},
+	{
+		"question": "Моя сестра не общается с ним",
+		"answer": "My sister doesn't communicate with him"
+	},
+	{
+		"question": "Это не кажется неважным",
+		"answer": "It doesn't seem unimportant"
+	},
+	{
+		"question": "Она стройная",
+		"answer": "She's slim"
+	},
+	{
+		"question": "Он не толстый",
+		"answer": "He isn't fat"
+	},
+	{
+		"question": "Ты согласен с ней?",
+		"answer": "Do you agree with her?"
+	},
+	{
+		"question": "Кого он критикует?",
+		"answer": "Who does he criticize?"
+	},
+	{
+		"question": "(В одно слово)Это объяснение неясное",
+		"answer": "This explanation is unclear"
+	},
+	{
+		"question": "Кто им восхищается?",
+		"answer": "Who admires him?"
+	},
+	{
+		"question": "Ты работаешь над своими ошибками?",
+		"answer": "Do you work on your mistakes?"
+	},
+	{
+		"question": "Его жена не делает покупки так часто",
+		"answer": "His wife doesn't go shopping so often"
+	},
+	{
+		"question": "Покупки",
+		"answer": "The shopping"
+	},
+	{
+		"question": "Они не хотят слушать их",
+		"answer": "They don't want to listen to them"
+	},
+	{
+		"question": "(не tobe)Сколько это стоит?",
+		"answer": "How much does it cost?"
+	},
+	{
+		"question": "Она в отпуске",
+		"answer": "She's on holiday"
+	},
+	{
+		"question": "Я хочу иметь продвинутый уровень в английском",
+		"answer": "I want to have an advanced level in english"
+	},
+	{
+		"question": "Мы видели это в третьем примере",
+		"answer": "We see it in the third example"
+	},
+	{
+		"question": "Он увлекается иностранными языками",
+		"answer": "He's keen on foreign languages"
+	},
+	{
+		"question": "Этой ошибки не существует",
+		"answer": "This miskake doesn't exist"
+	},
+	{
+		"question": "Мне не нравится эта мебель",
+		"answer": "I don't like this furniture"
+	},
+	{
+		"question": "Так себе",
+		"answer": "So so"
+	},
+	{
+		"question": "В пределах разумного",
+		"answer": "Within reason"
+	},
+	{
+		"question": "Я тебе не доверяю",
+		"answer": "I don't trust you"
+	},
+	{
+		"question": "Я бы хотел пообщаться с носителями языка",
+		"answer": "I'd like to communicate with a native speaker"
+	},
+	{
+		"question": "Делать покупки",
+		"answer": "Do the shopping"
+	},
+	{
+		"question": "Это не важно",
+		"answer": "It isn't important"
+	}
+]

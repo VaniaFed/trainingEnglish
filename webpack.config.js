@@ -1,16 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
-const sass = require('./webpack/sass');
+const sass = require('./webpack/sass').default;
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
-const images = require('./webpack/images');
 const canvas = require('./webpack/canvas');
-const jsonLoader = require('./webpack/json-loader');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 const PATHS = {
     source: path.join(__dirname, 'src'),
@@ -20,7 +21,12 @@ const PATHS = {
 const common = merge([
     {
         entry: {
-            'index': PATHS.source + '/index.ts'
+            'index': PATHS.source + '/ts/index.ts'
+        },
+        output: {
+            path: PATHS.build,
+            filename: 'js/[name].js',
+            publicPath: '../'
         },
         module: {
             rules: [
@@ -28,15 +34,27 @@ const common = merge([
                     test: /\.ts?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/
+                },
+                {
+                    test: /\.scss$/,
+                    use: ExtractTextPlugin.extract(
+                    {
+                        fallback: 'style-loader',
+                        use: ['css-loader', 'sass-loader']
+                    })
+                },
+                {
+                    test: /\.css$/,
+                    use: ExtractTextPlugin.extract(
+                    {
+                        fallback: 'style-loader',
+                        use: ['css-loader']
+                    })
                 }
             ]
         },
         resolve: {
             extensions: [ '.tsx', '.ts', '.js' ]
-        },
-        output: {
-            path: PATHS.build,
-            filename: 'js/[name].js'
         },
         plugins: [
             new HtmlWebpackPlugin({
@@ -44,17 +62,28 @@ const common = merge([
                 chunks: ['index', 'common'],
                 template: PATHS.source + '/index.pug'
             }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'common'
-            }),
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery'
-            })
+            }),
+            new CopyWebpackPlugin([
+                {
+                  from: PATHS.source + '/json',
+                  to: PATHS.build + '/json',
+                  toType: 'dir'
+                }
+            ]),
+            new CopyWebpackPlugin([
+                {
+                  from: PATHS.source + '/img',
+                  to: PATHS.build + '/img',
+                  toType: 'dir'
+                }
+            ]),
+            new ExtractTextPlugin({filename: 'index.css'}),
         ],
     },
-    pug(),
-    images()
+    pug()
 ]);
 
 module.exports = function(env) {
@@ -62,8 +91,7 @@ module.exports = function(env) {
         return merge([
             common,
             canvas,
-            extractCSS(),
-            jsonLoader
+            extractCSS()
             //uglifyJS()
         ]);
     }
@@ -72,9 +100,6 @@ module.exports = function(env) {
             common,
             canvas,
             devserver(),
-            sass(),
-            css(),
-            jsonLoader
         ])
     }
 };
